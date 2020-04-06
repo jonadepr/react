@@ -1,0 +1,13 @@
+.usuario {
+    background: aliceblue;
+    border: 1px solid blueviolet;
+    padding: 1em 1em 1em 30%;
+}
+
+.usuario li {
+    list-style: square;
+}
+
+.usuario > div {
+    color: blue;
+}

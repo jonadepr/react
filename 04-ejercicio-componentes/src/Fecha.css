@@ -1,0 +1,8 @@
+.fecha {
+    justify-self: right;
+    margin: 0.5em 1em 0em 0em;
+    border: 1px solid blue;
+    padding: 0.5em;
+    border-radius: 4px;
+    background-color: lightcoral;
+}

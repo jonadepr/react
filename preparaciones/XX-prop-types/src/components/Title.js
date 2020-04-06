@@ -1,8 +1,14 @@
 import React from 'react'
 import './Title.css'
+import PropTypes from 'prop-types'
+
+
 
 const Title = (props) => {
 
+    // npm install prop-types --save
+
+    
     console.log(props);
 
     /**
@@ -19,6 +25,10 @@ const Title = (props) => {
             <hr></hr>
         </div>
     )
+}
+
+Title.propTypes = {
+    titulo: PropTypes.string
 }
 
 export default Title;

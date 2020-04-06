@@ -6,7 +6,8 @@ const App = () => {
     
     // puedo definir una variable que es lo quiero 
     // que el título muestre
-    const titulo = "Welcome properties";
+    //const titulo = "Welcome properties";
+    const titulo = 1;
     
     //lo que ponga entre llaves es javascript
     return (
