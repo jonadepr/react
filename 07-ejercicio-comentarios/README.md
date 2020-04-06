@@ -31,7 +31,7 @@ tenemos por ejemplo:
 
 4. Crear un componente `Comentario.js` que tiene como parámetro (props) el comenario
 
-Tiene que tener la (estructura que dice semantic)[https://semantic-ui.com/views/comment.html]
+Tiene que tener la [estructura que dice semantic](https://semantic-ui.com/views/comment.html)
 
 5. Recorrer todos los comentarios y ponerlas en pantalla con `array.map`
 
