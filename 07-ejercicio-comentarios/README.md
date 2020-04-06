@@ -19,6 +19,8 @@ El link debo copiarlo en el head del html
 
 3. Crear con faker los comentarios (App.js)
 
+> habrá que instalar la librería faker
+
 tenemos por ejemplo:
 - image.avatar
 - nombre
