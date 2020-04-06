@@ -1,5 +1,7 @@
 # Ejercicio comentarios
 
+!(ejercicio)[]
+
 1. Vamos a usar el comentario de semantic
 
 ()[https://semantic-ui.com/views/comment.html]
