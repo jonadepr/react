@@ -1,15 +1,15 @@
 # Ejercicio comentarios
 
-!(ejercicio)[]
+![ejercicio](ejercicio-comentarios.jpg)
 
 1. Vamos a usar el comentario de semantic
 
-()[https://semantic-ui.com/views/comment.html]
+https://semantic-ui.com/views/comment.html
 
 2. Tendremos que importar el css de semantic
 
 Las librerías de css de semantic están en 
-()[https://cdnjs.com/libraries/semantic-ui]
+https://cdnjs.com/libraries/semantic-ui
 
 El link tag es: 
 
