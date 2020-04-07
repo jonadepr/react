@@ -9,9 +9,10 @@ const Persona = (props) => {
         <div className="persona">
             <img src={persona.avatar} alt={persona.nombre}></img>
             <ul>
-            <li>Nombre y apellido: <span>{persona.nombre} {persona.apellido}</span></li>
-            <li>{persona.telefono}</li>
-            <li>Edad: {persona.edad}</li>
+                <li>Nombre y apellido: <span>{persona.nombre} {persona.apellido}</span></li>
+                <li>{persona.telefono}</li>
+                <li>Edad: {persona.edad}</li>
+                <li>Fecha de alta: {persona.fechaAlta.toLocaleDateString()}</li>
             </ul>
         </div>
     )

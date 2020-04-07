@@ -10,7 +10,8 @@ for (let index = 0; index < 20; index++) {
     apellido: faker.name.lastName(),
     telefono: faker.phone.phoneNumber(),
     edad: faker.random.number(90),
-    avatar: faker.image.avatar()
+    avatar: faker.image.avatar(),
+    fechaAlta : faker.date.past()
   };
   personas.push(element);
 }
