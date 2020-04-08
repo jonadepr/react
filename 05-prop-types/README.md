@@ -18,4 +18,4 @@ npm install -s prop-types
 
 Por ejemplo, la librería que nos ocupa está aquí:
 
-()[https://www.npmjs.com/package/prop-types]
+[Prop-types](https://www.npmjs.com/package/prop-types)
