@@ -39,7 +39,7 @@ class ListaComentarios extends Component {
                                 item => <tr key={item.id}>
                                     <td data-label="Titulo">{item.title}</td>
                                     <td data-label="Completado">
-                                        {item.completed ? <i class="purple check icon"></i>:
+                                        {item.completed ? <i class="green check icon"></i>:
                                         <i class="red close icon"></i>}
                                     </td>
                                     <td data-label="Id">{item.id}</td>

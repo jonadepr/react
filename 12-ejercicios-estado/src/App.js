@@ -1,11 +1,13 @@
 import React from 'react';
-import ListaComentarios from './components/ListaComentarios'
+import ListaTareas from './components/ListaTareas'
+import ListaUsuarios from './components/ListaUsuarios'
 
 
 function App() {
   return (
     <div className="App">
-      <ListaComentarios></ListaComentarios>
+      {/* <ListaComentarios></ListaComentarios> */}
+      <ListaUsuarios></ListaUsuarios>
     </div>
   );
 }
