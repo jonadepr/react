@@ -14,49 +14,43 @@ class ListaComentarios extends Component {
     componentDidMount() {
         axios.get("https://jsonplaceholder.typicode.com/todos")
             .then(
-                res => this.setState({todos:res.data})
+                res => this.setState({ todos: res.data })
             ).catch(
                 err => console.error("error en axios", err)
             );
 
-        // fetch('https://jsonplaceholder.typicode.com/todos')
-        //     .then(response => {
-        //         console.log("fetch response", response)
-        //         return response.json()
-        //     })
-        //     .then(json => console.log("fetch json", json))
-
-
-        // Ejemplo de error 404
-
-        //     axios.get("https://error404.atomseo.com/220")
-        //     .then(
-        //         res => console.log("axios response",res)
-        //         // console.log
-        //     ).catch(err => console.log("error",err))
-
-        // fetch('https://error404.atomseo.com/220')
-        //     .then(response => {
-        //         console.log("fetch response", response)
-        //         return response.json()
-        //     })
-        //     .then(json => console.log("fetch json", json))
     }
 
     render() {
         return (
             <div className="lista-comentarios">
-                <ol>
-                    {
-                        this.state.todos.length < 1 ? <h3>Cargando...</h3> : null
-                    }
-                    {
-                        this.state.todos.map(
-                            e =>
-                                <li>{e.title}</li>
-                        )
-                    }
-                </ol>
+                {
+                    this.state.todos.length < 1 ? <h3>Cargando...</h3> : null
+                }
+                <table className="ui celled table unstackable">
+                    <thead>
+                        <tr><th>Titulo</th>
+                            <th>Completado</th>
+                            <th>Id</th>
+                        </tr></thead>
+                    <tbody>
+                        {
+                            this.state.todos.map(
+                                item => <tr key={item.id}>
+                                    <td data-label="Titulo">{item.title}</td>
+                                    <td data-label="Completado">
+                                        {item.completed ? <i class="purple check icon"></i>:
+                                        <i class="red close icon"></i>}
+                                    </td>
+                                    <td data-label="Id">{item.id}</td>
+                                </tr>
+
+                            )
+                        }
+                    </tbody>
+                </table>
+
+
             </div>
         )
     }
