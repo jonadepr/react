@@ -24,3 +24,11 @@ Al hacer click en un usuario -> la lista se filtre mostrando sólo los todos del
 
 Sugerencia: 
 - tener el usuario con el que vamos a filtrar en Tareas.js
+
+## 3a parte
+
+Al hacer doble click sobre un elemento no completado, nos lo marca como completado.
+
+Sugerencia:
+- Hacer doble click sobre toda la fila
+
