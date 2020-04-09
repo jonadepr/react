@@ -1,0 +1,9 @@
+.emphasis {
+    background-color: red;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    background-color: green;
+}
