@@ -32,7 +32,8 @@ export class ListaUsuarios extends Component {
                 <div className="ui link cards">
                 {
                     this.state.usuarios.map(
-                        item => <UsuarioCard usuario={item}/>
+                        item => <UsuarioCard changeUser={this.props.changeUser}
+                         usuario={item}/>
                     )
                 }
                 </div>

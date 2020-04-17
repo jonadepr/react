@@ -6,11 +6,16 @@ export class UsuarioCard extends Component {
     // Le hemos pasado el objeto de usuario en la propiedad "usuario"
     // {this.props.usuario
 
+
+    onClickHandler = e => {
+        this.props.changeUser(this.props.usuario.id);
+    }
+
     render() {
         return (
-            <div className="ui card">
+            <div className="ui card" onClick={this.onClickHandler}>
                 <div className="image">
-                    <img src={faker.image.avatar()}></img>
+                    <img src={faker.image.avatar()} alt={this.props.usuario.name}></img>
                 </div>
                 <div className="content">
                     <a className="header">{this.props.usuario.name}</a>
