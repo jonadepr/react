@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import './ListaTareas.css'
 
 class ListaComentarios extends Component {
 
@@ -59,7 +60,7 @@ class ListaComentarios extends Component {
 
     render() {
         return (
-            <div className="lista-comentarios">
+            <div className="lista-tareas">
                 {
                     this.state.todos.length < 1 ? <h3>Cargando...</h3> : null
                 }
@@ -80,7 +81,7 @@ class ListaComentarios extends Component {
                                 .map(
                                     item =>
                                         <tr key={item.id} onDoubleClick={() => this.onTrDblClicHandler(item.id)}>
-                                            <td data-label="Usuario">{this._getNombreUsuario(item.userId)}</td>
+                                            <td data-label="Usuario" class="usuario">{this._getNombreUsuario(item.userId)}</td>
                                             <td data-label="Titulo">{item.title}</td>
                                             <td data-label="Completado">
                                                 {item.completed ?

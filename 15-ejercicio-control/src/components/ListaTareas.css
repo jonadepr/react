@@ -1,0 +1,8 @@
+.lista-tareas .usuario {
+    font-family: var(--fuente-nombre);
+    
+}
+
+.lista-tareas {
+    margin: 10px 10px 0px 10px;
+}

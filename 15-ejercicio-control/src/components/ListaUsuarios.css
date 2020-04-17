@@ -1,4 +1,10 @@
 .lista-usuarios {
     display: flex;
     flex-wrap: wrap;
+    margin: 10px 10px 0px 10px;
+}
+
+.lista-usuarios .ui.cards>.card>.content>.header {
+    font-family: var(--fuente-nombre);
+    color: var(--color-nombre, darkblue);
 }

@@ -18,7 +18,7 @@ export class UsuarioCard extends Component {
                     <img src={faker.image.avatar()} alt={this.props.usuario.name}></img>
                 </div>
                 <div className="content">
-                    <a className="header">{this.props.usuario.name}</a>
+                    <div className="header">{this.props.usuario.name}</div>
                     <div className="meta">
                         <span className="date">
                             {this.props.usuario.company.name}
@@ -29,10 +29,10 @@ export class UsuarioCard extends Component {
                     </div>
                 </div>
                 <div className="extra content">
-                    <a>
+                    
                         <i className="phone icon"></i>
                         {this.props.usuario.phone}
-                    </a>
+                    
                 </div>
             </div>
         )
