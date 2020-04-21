@@ -30,7 +30,7 @@ export class TablaPosts extends Component {
 
         return (
             <div className="tabla-posts">
-                <table>
+                <table className="ui red celled striped table unstackable">
                     <thead>
                     <tr>
                         <th>User Id</th>
