@@ -1,4 +1,5 @@
 import React from 'react'
+import {estilosNombre as styles} from './Styles'
 
 export const Home = () => {
     return <div>Home</div>
@@ -26,10 +27,13 @@ export class Item extends React.Component {
 }
 
 export class Hola extends React.Component {
+
+    
     render() {
+        
         const nombre = this.props.match.params.nombre;
         return (
-            <div>
+            <div style={styles}>
                 Hola {nombre}
             </div>
         )
