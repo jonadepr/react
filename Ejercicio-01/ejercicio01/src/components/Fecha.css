@@ -1,0 +1,14 @@
+.fecha {
+    width: 70px;
+    height: 25px;
+    border-width:1px; 
+    border-style: solid;
+    text-align: center;
+    align-items: center;
+    background-color: cornsilk;
+    border-color: darkkhaki;
+    border-radius: 15px;
+    margin: 40px;
+    padding: 1rem;
+    justify-self: right;
+}

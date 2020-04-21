@@ -1,0 +1,8 @@
+.header {
+    border-width:1px;
+    border-style: solid;
+    display: grid;
+    grid-template-columns: 50% auto;
+    height: 400px;
+    
+}

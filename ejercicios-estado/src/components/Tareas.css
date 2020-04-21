@@ -1,0 +1,4 @@
+.tareas{
+    display: grid;
+    grid-template-columns: auto auto;
+}
