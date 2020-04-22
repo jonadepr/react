@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './Fotos.css'
 
+
 export class Fotos extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             imagenes: [],
-            pagina: 1
+            pagina: 1,
+            search: this.props.filtro
         }
     }
 
@@ -25,26 +27,41 @@ export class Fotos extends Component {
     }
 
 
+    componentDidUpdate(){
+        
+        console.log("Frase cambiada",this.props.filtro); 
+    }
+
+    changeFiltro() {
+        axios.get("https://api.unsplash.com/search/photos?page=1&query="+this.props.filtro+"&client_id=S8ic8SNvlYvW2ZWpGTZCI09549rjVmsqh5SQMKfJkRM&client_secret=iGOdWbBVHINeso8xkiQ5Iyv7hj6pGZq2-SZvVHCO8ps").then(
+            res => {
+                this.setState(
+                    {  
+                        frase: this.props.filtro
+                    }
+                )
+            }
+        )
+        //console.log(this.props.search);
+
+    }
+
+
     changeNextPage = (e) => {
         axios.get("https://api.unsplash.com/search/photos?page="+this.state.pagina + 1+"&query=valencia&client_id=S8ic8SNvlYvW2ZWpGTZCI09549rjVmsqh5SQMKfJkRM&client_secret=iGOdWbBVHINeso8xkiQ5Iyv7hj6pGZq2-SZvVHCO8ps").then(
             res => {
                 this.setState(
                     {  
                         imagenes: this.state.imagenes.concat(res.data.results),
+                        pagina: this.state.pagina + 1
                     }
                 )
             }
         )
-        
-        this.setState({
-            pagina: this.state.pagina + 1
-        })
     }
 
 
     render() {
-        console.log(this.state.imagenes);
-
         return (
             <>
             <div className="marco-fotos">
