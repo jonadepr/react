@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {BASE_API_URL} from '../config/config'
 
-const eliminarProyecto = (props, id) =>{
+const eliminarProyecto = (id) =>{
     //console.log(id)
     axios.delete(`${BASE_API_URL}/projects/${id}/`).then(
         res => console.log(res)
@@ -46,7 +46,7 @@ const ProjectsTable = (props) => {
                                         Ver
                                         </Link>
 
-                                            <button onClick={()=>eliminarProyecto(props,e.id)} className="ui button">Borrar</button>
+                                            <button onClick={()=>eliminarProyecto(e.id)} className="ui button">Borrar</button>
 
                                         </div>
 
