@@ -1,7 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import {BASE_API_URL} from '../config/config'
+
+const eliminarProyecto = (props, id) =>{
+    //console.log(id)
+    axios.delete(`${BASE_API_URL}/projects/${id}/`).then(
+        res => console.log(res)
+    ).catch(
+        console.log
+    )
+    window.location.reload(true);
+}
+
 
 const ProjectsTable = (props) => {
+
+
     return (
         <div>
             <div>
@@ -26,11 +41,12 @@ const ProjectsTable = (props) => {
                                     <td>{e.client}</td>
                                     <td>
                                         <div>
-                                            <Link to={"/projects/" + e.id +"/"} className="ui basic button">
+                                            <Link to={"/projects/" + e.id + "/"} className="ui basic button">
                                                 <i className="icon eye"></i>
                                         Ver
                                         </Link>
-                                            <button class="ui button">Borrar</button>
+
+                                            <button onClick={()=>eliminarProyecto(props,e.id)} className="ui button">Borrar</button>
 
                                         </div>
 

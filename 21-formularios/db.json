@@ -43,22 +43,10 @@
       "id": 7
     },
     {
-      "code": "PP1",
-      "description": "DES",
-      "client": "CLI",
-      "id": 8
-    },
-    {
-      "code": "prueba",
-      "description": "test",
-      "client": "test",
+      "code": "r4",
+      "description": "r44",
+      "client": "r444",
       "id": 9
-    },
-    {
-      "code": "Codigo1",
-      "description": "Descripción1",
-      "client": "Cliente1",
-      "id": 10
     }
   ],
   "clientes": []
