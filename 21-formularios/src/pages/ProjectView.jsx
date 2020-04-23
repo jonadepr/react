@@ -35,7 +35,7 @@ export class ProjectView extends Component {
         if (this.props.match.params.id !== "new")
         return (
             <div>
-                <Header texto={"Vista del proyecto con id: "+this.props.match.params.id}/>
+                <Header texto={"Vista del proyecto "+this.state.code}/>
                 <ProjectCard card={this.state}/>
             </div>
         )
