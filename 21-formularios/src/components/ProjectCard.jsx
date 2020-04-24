@@ -23,8 +23,8 @@ export class ProjectCard extends Component {
                         </div>
                         <div className="extra content">
                             
-                            <Link to="/projects/" className="ui button">
-                        <div className="ui basic green button">Volver</div>
+                            <Link to="/projects/" className="ui green button">
+                        Volver
                         
                 </Link>
                                 

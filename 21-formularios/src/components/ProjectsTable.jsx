@@ -15,8 +15,6 @@ const eliminarProyecto = (id) =>{
 
 
 const ProjectsTable = (props) => {
-
-
     return (
         <div>
             <div>
@@ -41,12 +39,12 @@ const ProjectsTable = (props) => {
                                     <td>{e.client}</td>
                                     <td>
                                         <div>
-                                            <Link to={"/projects/" + e.id + "/"} className="ui basic button">
+                                            <Link to={"/projects/" + e.id + "/"} className="ui basic green button">
                                                 <i className="icon eye"></i>
                                         Ver
                                         </Link>
 
-                                            <button onClick={()=>eliminarProyecto(e.id)} className="ui button">Borrar</button>
+                                            <button onClick={()=>eliminarProyecto(e.id)} className="ui red button">Borrar</button>
 
                                         </div>
 
