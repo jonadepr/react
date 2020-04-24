@@ -1,8 +1,19 @@
 .imagen{
     width: 100px;
     height: 50px;
+    padding: 10px; margin: 10px; border: 2px 
 }
 
 .header{
     border: 1px solid black;
+
+}
+
+.chucknorris {
+    justify-content: center;
+    justify-self: center;
+}
+tbody>tr:hover{
+    background-color: lightgreen;
+    cursor: pointer;
 }
