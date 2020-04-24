@@ -29,6 +29,36 @@
       "description": "Intalar Windows 10 PRO",
       "client": "ACER INC",
       "id": 5
+    },
+    {
+      "code": "LY786",
+      "description": "Layer paint",
+      "client": "MSPAINT",
+      "id": 6
+    },
+    {
+      "code": "YOUWHATCH324",
+      "description": "Youtube",
+      "client": "SandDisks SL",
+      "id": 7
+    },
+    {
+      "code": "TV67832",
+      "description": "Reparación TV",
+      "client": "Fernandina Coches SL",
+      "id": 8
+    },
+    {
+      "code": "TVAND9821",
+      "description": "Instalación TV Android",
+      "client": "KELLYS SA",
+      "id": 9
+    },
+    {
+      "code": "Freeman555",
+      "description": "Ready Player One",
+      "client": "STEVEN SL",
+      "id": 10
     }
   ],
   "clientes": []
