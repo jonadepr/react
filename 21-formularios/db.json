@@ -20,8 +20,8 @@
     },
     {
       "code": "LLOODL",
-      "description": "Lolito necesita Windows 10",
-      "client": "Lolito Gamer XD",
+      "description": "Taller de carpintería necesita Windows 10",
+      "client": "Carpintería MANOLO",
       "id": 4
     },
     {
@@ -29,24 +29,6 @@
       "description": "Intalar Windows 10 PRO",
       "client": "ACER INC",
       "id": 5
-    },
-    {
-      "code": "PRUTESTDELETE",
-      "description": "PARA DELETEAR",
-      "client": "YO",
-      "id": 6
-    },
-    {
-      "code": "JAVATIT5342",
-      "description": "Java Project Pizzas",
-      "client": "YoMismo SL",
-      "id": 7
-    },
-    {
-      "code": "343YretR",
-      "description": "Reparación Baños",
-      "client": "MERCADONA SL",
-      "id": 8
     }
   ],
   "clientes": []
