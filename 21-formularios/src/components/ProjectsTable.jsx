@@ -6,11 +6,12 @@ import {BASE_API_URL} from '../config/config'
 const eliminarProyecto = (id) =>{
     //console.log(id)
     axios.delete(`${BASE_API_URL}/projects/${id}/`).then(
-        res => console.log(res)
+        res => {console.log(res)
+        window.location.reload(true)}
     ).catch(
         console.log
     )
-    window.location.reload(true);
+    
 }
 
 
