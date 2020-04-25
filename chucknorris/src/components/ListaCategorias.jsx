@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './ListaCategorias.css'
+import Categoria from './Categoria'
 
 export class ListaCategorias extends Component {
 
@@ -25,11 +26,6 @@ export class ListaCategorias extends Component {
     }
 
 
-    setCategoria= e =>{
-        console.log("evento",e)
-        this.props.setCategoria(e);
-    }
-
     render() {
         return (
             <div className="lista-categorias">
@@ -38,12 +34,12 @@ export class ListaCategorias extends Component {
                         <tr><th>Categorías</th></tr>
                     </thead>
                     <tbody>
-                        {this.state.categorias.map(
-                            e => <tr key={e}>
-                                <td  onClick={()=>this.setCategoria(e)} data-label="Name">{e}</td>
-                            </tr>
-                        )
-                        }
+                    {this.state.categorias.map(
+                        e => <Categoria setCategoria={this.props.setCategoria} 
+                        categoria={e} 
+                        />)
+                    }
+                    
                     </tbody>
                 </table>
             </div>

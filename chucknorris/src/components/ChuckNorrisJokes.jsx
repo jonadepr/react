@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ListaCategorias from './ListaCategorias'
-import Header from './Header'
 import Chiste from './Chiste'
+import './ChuckNorrisJokes.css'
 
 export class ChuckNorrisJokes extends Component {
 
@@ -13,19 +13,18 @@ export class ChuckNorrisJokes extends Component {
     }
 
 
-    setCategotia=(c)=>{
-        console.log("Cambiando categoria a ", c)
+    setCategoria = ( e ) => {
+        console.log("Cambiando categoria a", e );
         this.setState(
             {
-                categoria: c
+                categoria: e
             })
     }
 
     render() {
         return (
             <div className="chucknorris">
-                <Header texto={"Lista de categorías de chistes de Chuck Norris"}/>
-                <ListaCategorias categoria={this.state.categoria} setCategoria={this.setCategoria}/>
+                <ListaCategorias setCategoria={this.setCategoria}/>
                 <Chiste categoria={this.state.categoria} />
             </div>
         )
