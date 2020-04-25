@@ -15,8 +15,6 @@ export class Categoria extends Component {
             <td onClick={this.onClickHandler}>{this.props.categoria}</td>
         </tr>
 
-            
-            
         )
     }
 }
