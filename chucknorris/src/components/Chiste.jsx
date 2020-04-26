@@ -6,13 +6,14 @@ export class Chiste extends Component {
     render() {
         if(this.props.chiste!==null)
         return (
+            <>
             <div className="chiste">
                 <div class="ui cards">
                     <div class="card">
                         <div class="content">
                             <img class="right floated mini ui image" src={this.props.chiste.icon_url}/>
                                 <div class="header">
-                                    Chuck Norris Jokes
+                                    Chiste aleatorio categoría:
                                 </div>
                                 <div class="meta">
                                     {this.props.chiste.categories}
@@ -29,6 +30,7 @@ export class Chiste extends Component {
                         </div>
                     </div>
                     </div>
+            </>
         )
         else return null
     }

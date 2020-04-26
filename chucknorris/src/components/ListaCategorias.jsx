@@ -39,7 +39,6 @@ export class ListaCategorias extends Component {
                         categoria={e} 
                         />)
                     }
-                    
                     </tbody>
                 </table>
             </div>

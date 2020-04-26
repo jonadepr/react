@@ -3,6 +3,9 @@ import ListaCategorias from './ListaCategorias'
 import Chiste from './Chiste'
 import './ChuckNorrisJokes.css'
 import axios from 'axios'
+import Search from './Search'
+import ListaChistes from './ListaChistes'
+
 
 export class ChuckNorrisJokes extends Component {
 
@@ -10,7 +13,9 @@ export class ChuckNorrisJokes extends Component {
         super(props);
         this.state = {
             categoria: "",
-            chiste: null
+            chiste: null,
+            filtro: "",
+            listaChistes: []
         }
     }
 
@@ -21,6 +26,7 @@ export class ChuckNorrisJokes extends Component {
                 categoria: c
             })
         this.updateChiste(c);
+        this.updateLista();
     }
 
     updateChiste(c){
@@ -36,11 +42,36 @@ export class ChuckNorrisJokes extends Component {
     }
 
 
+    
+    updateLista(q){
+        axios.get(`https://api.chucknorris.io/jokes/search?query=${q}`).then(
+            res =>{
+                this.setState({
+                    listaChistes: res.data,
+                })
+            }
+        ).catch(
+            console.log
+        )
+    }
+
+
+    filtra = (nuevoFiltro)  => {
+        this.setState({
+            filtro: nuevoFiltro,
+            chiste: null
+        });
+        this.updateLista(nuevoFiltro);
+        this.updateChiste();
+    }
+
     render() {
         return (
             <div className="chucknorris">
+                <Search changeSearch={this.filtra}/>
                 <ListaCategorias setCategoria={this.setCategoria}/>
                 <Chiste chiste={this.state.chiste} />
+                <ListaChistes lista={this.state.listaChistes}/>
             </div>
         )
     }

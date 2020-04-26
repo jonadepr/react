@@ -11,6 +11,7 @@ export class Header extends Component {
                 <img className="imagen" alt={this.props.texto} src="https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png"></img>
                 <h3 className="ui header">{this.props.texto} </h3>
             </div>
+
         )
     }
 }

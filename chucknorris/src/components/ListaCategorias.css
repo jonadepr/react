@@ -1,8 +1,7 @@
 .lista-categorias{
     margin: 10px;
     width: auto;
-    overflow: scroll;
-    height: 500px;
+    height: 1000px;
     width: 200px;
     justify-self: start;
 }

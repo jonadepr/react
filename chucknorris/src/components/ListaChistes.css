@@ -1,0 +1,6 @@
+.listachistes{
+    margin: 20px;
+    overflow: scroll;
+    height: 700px;
+    width: 300px;
+}
