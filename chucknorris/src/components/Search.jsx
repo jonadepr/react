@@ -47,25 +47,28 @@ export class Search extends Component {
         const auto = this.props.auto;
 
         const botonBusqueda =
-            <button className="ui active button" 
-              onClick={this.onSearchButtonClicked}
+            <button className="ui active button"
+                onClick={this.onSearchButtonClicked}
             >
                 <span>Buscar </span>
                 <i className="search icon"></i>
             </button>
 
+
         //console.log(auto);
 
         return (
-            <div className="ui search">
-                <div className="ui icon input">
-                    <input className="prompt" name="search" type="text" value={this.state.search}
-                        onChange={this.onSearchChange}
-                        onKeyUp={this.onSearchInputKeyUp}></input>
-                    <i className="search icon"></i>
+
+                <div className="ui search">
+                    <div className="ui icon input">
+                        <input className="prompt" name="search" type="text" value={this.state.search}
+                            onChange={this.onSearchChange}
+                            onKeyUp={this.onSearchInputKeyUp}></input>
+                        <i className="search icon"></i>
+                    </div>
+                    {auto ? null : botonBusqueda}
                 </div>
-                {auto ? null : botonBusqueda}
-            </div>
+
         )
     }
 }

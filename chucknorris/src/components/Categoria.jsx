@@ -10,10 +10,10 @@ export class Categoria extends Component {
 
     render() {
         return (
-            
+
             <tr key={this.props.categoria}>
-            <td onClick={this.onClickHandler}>{this.props.categoria}</td>
-        </tr>
+                <td onClick={this.onClickHandler}>{this.props.categoria}</td>
+            </tr>
 
         )
     }

@@ -23,13 +23,15 @@ export class ChuckNorrisJokes extends Component {
     setCategoria = ( c ) => {
         this.setState(
             {
-                categoria: c
+                categoria: c,
+                listaChistes: []
             })
         this.updateChiste(c);
-        this.updateLista();
+        /* this.updateLista(); */
     }
 
     updateChiste(c){
+        if(c!=null)
         axios.get(`https://api.chucknorris.io/jokes/random?category=${c}`).then(
             res =>{
                 this.setState({
@@ -44,6 +46,7 @@ export class ChuckNorrisJokes extends Component {
 
     
     updateLista(q){
+        if(q!=null)
         axios.get(`https://api.chucknorris.io/jokes/search?query=${q}`).then(
             res =>{
                 this.setState({
@@ -62,7 +65,7 @@ export class ChuckNorrisJokes extends Component {
             chiste: null
         });
         this.updateLista(nuevoFiltro);
-        this.updateChiste();
+        this.updateChiste(null);
     }
 
     render() {

@@ -33,23 +33,23 @@ export class Chiste extends Component {
             return (
                 <>
                     <div className="chiste">
-                        <div class="ui cards">
-                            <div class="card">
-                                <div class="content">
-                                    <img class="right floated mini ui image" src={this.props.chiste.icon_url} alt={this.props.chiste.icon_url} />
-                                    <div class="header">
+                        <div className="ui cards">
+                            <div className="card">
+                                <div className="content">
+                                    <img className="right floated mini ui image" src={this.props.chiste.icon_url} alt={this.props.chiste.icon_url} />
+                                    <div className="header">
                                         Chiste aleatorio categoría:
                                 </div>
-                                    <div class="meta">
+                                    <div className="meta">
                                         {this.props.chiste.categories}
                                     </div>
-                                    <div class="description">
+                                    <div className="description">
                                         {this.props.chiste.value}
                                     </div>
                                 </div>
-                                <div class="extra content">
+                                <div className="extra content">
 
-                                    <div class="description">{this.props.chiste.updated_at}</div>
+                                    <div className="description">{this.props.chiste.updated_at}</div>
                                     <button className="ui primary button"
                                         onClick={this.onSubmitClick}>
                                         Guardar
