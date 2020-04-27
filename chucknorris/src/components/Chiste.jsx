@@ -27,6 +27,17 @@ export class Chiste extends Component {
     }
 
 
+    
+    onBorrarClick = id => {
+        console.log("elemento a borrar", id)
+        axios.delete(`http://localhost:4000/chistes/${id}/`).then(
+            res => {
+                console.log(res);
+                window.location.reload();
+            }
+        ).catch(console.log)
+    }
+
 
     render() {
         if (this.props.chiste !== null)
@@ -38,7 +49,7 @@ export class Chiste extends Component {
                                 <div className="content">
                                     <img className="right floated mini ui image" src={this.props.chiste.icon_url} alt={this.props.chiste.icon_url} />
                                     <div className="header">
-                                        Chiste aleatorio categoría:
+                                        Chiste categoría:
                                 </div>
                                     <div className="meta">
                                         {this.props.chiste.categories}
@@ -54,6 +65,12 @@ export class Chiste extends Component {
                                         onClick={this.onSubmitClick}>
                                         Guardar
                                     </button>
+                                    {this.props.deletebutton?
+                                        (<button className="ui primary red button"
+                                        onClick={() => this.onBorrarClick(this.props.chiste.id)}>
+                                        Borrar
+                                        </button>):null}
+                                    
                                 </div>
                             </div>
                         </div>

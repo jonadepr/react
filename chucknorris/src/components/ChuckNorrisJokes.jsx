@@ -52,6 +52,7 @@ export class ChuckNorrisJokes extends Component {
                 this.setState({
                     listaChistes: res.data,
                 })
+                console.log(this.state.listaChistes)
             }
         ).catch(
             console.log
@@ -73,7 +74,7 @@ export class ChuckNorrisJokes extends Component {
             <div className="chucknorris">
                 <Search changeSearch={this.filtra}/>
                 <ListaCategorias setCategoria={this.setCategoria}/>
-                <Chiste chiste={this.state.chiste} />
+                <Chiste deletebutton={false} chiste={this.state.chiste} />
                 <ListaChistes lista={this.state.listaChistes}/>
             </div>
         )

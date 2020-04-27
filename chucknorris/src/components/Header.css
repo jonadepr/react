@@ -1,12 +1,7 @@
 .imagen{
     width: 200px;
-    height: 100px;
-    padding: 10px; margin: 10px; border: 2px 
-}
-
-.header{
-    border: 1px solid black;
-
+    height: 90px;
+    margin: 10px; 
 }
 
 .chucknorris {

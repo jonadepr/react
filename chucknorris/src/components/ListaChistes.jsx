@@ -11,7 +11,7 @@ export class ListaChistes extends Component {
                 Total {this.props.lista.total}
                 {" "}chistes: {
                     this.props.lista.result.map(
-                        chis => <Chiste chiste={chis} />
+                        chis => <Chiste deletebutton={true} chiste={chis} />
 
                     ) 
                 }

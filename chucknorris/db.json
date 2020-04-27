@@ -64,14 +64,14 @@
     },
     {
       "categories": [
-        "celebrity"
+        "money"
       ],
-      "created_at": "2020-01-05 13:42:19.576875",
+      "created_at": "2020-01-05 13:42:18.823766",
       "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
-      "id": "oc9o2hv9qpqruqtn7tz1_a",
-      "updated_at": "2020-01-05 13:42:19.576875",
-      "url": "https://api.chucknorris.io/jokes/oc9o2hv9qpqruqtn7tz1_a",
-      "value": "Bill Gates thinks he's Chuck Norris. Chuck Norris actually laughed. Once."
+      "id": "7eqp16nzqucq6phk_2expg",
+      "updated_at": "2020-01-05 13:42:18.823766",
+      "url": "https://api.chucknorris.io/jokes/7eqp16nzqucq6phk_2expg",
+      "value": "When Chuck Norris sends in his taxes, he sends blank forms and includes only a picture of himself, crouched and ready to attack. Chuck Norris has not had to pay taxes, ever."
     }
   ]
 }
