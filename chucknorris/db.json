@@ -50,6 +50,28 @@
       "updated_at": "2020-01-05 13:42:19.576875",
       "url": "https://api.chucknorris.io/jokes/vvwoodhpr1-bbid5hbs9gw",
       "value": "Ozzy Osbourne bites the heads off of bats. Chuck Norris bites the heads off of Siberian Tigers."
+    },
+    {
+      "categories": [
+        "fashion"
+      ],
+      "created_at": "2020-01-05 13:42:18.823766",
+      "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+      "id": "0wdewlp2tz-mt_upesvrjw",
+      "updated_at": "2020-01-05 13:42:18.823766",
+      "url": "https://api.chucknorris.io/jokes/0wdewlp2tz-mt_upesvrjw",
+      "value": "Chuck Norris does not follow fashion trends, they follow him. But then he turns around and kicks their ass. Nobody follows Chuck Norris."
+    },
+    {
+      "categories": [
+        "celebrity"
+      ],
+      "created_at": "2020-01-05 13:42:19.576875",
+      "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+      "id": "oc9o2hv9qpqruqtn7tz1_a",
+      "updated_at": "2020-01-05 13:42:19.576875",
+      "url": "https://api.chucknorris.io/jokes/oc9o2hv9qpqruqtn7tz1_a",
+      "value": "Bill Gates thinks he's Chuck Norris. Chuck Norris actually laughed. Once."
     }
   ]
 }
