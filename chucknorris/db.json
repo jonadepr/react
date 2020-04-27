@@ -19,6 +19,17 @@
       "updated_at": "2020-01-05 13:42:19.324003",
       "url": "https://api.chucknorris.io/jokes/uIrcWG7dRQG2SE2ZITAldQ",
       "value": "Pepis was created when Chuck Norris said i want a Drink and not a Coke they owe me money. Pepis was thought of, invented, created, canned, and brought to Chuck Norris in 12 mins. Chuck Norris still roundhouse kicked the delivery guy for being to slow with his drink"
+    },
+    {
+      "categories": [
+        "animal"
+      ],
+      "created_at": "2020-01-05 13:42:19.104863",
+      "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+      "id": "o0sukejatqchi7oyjms6mw",
+      "updated_at": "2020-01-05 13:42:19.104863",
+      "url": "https://api.chucknorris.io/jokes/o0sukejatqchi7oyjms6mw",
+      "value": "Chuck Norris can set ants on fire with a magnifying glass. At night."
     }
   ]
 }

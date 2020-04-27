@@ -29,7 +29,7 @@ export class ListaCategorias extends Component {
     render() {
         return (
             <div className="lista-categorias">
-                <table className="ui celled table">
+                <table className="ui celled table unstackable">
                     <thead>
                         <tr><th>Categorías</th></tr>
                     </thead>
