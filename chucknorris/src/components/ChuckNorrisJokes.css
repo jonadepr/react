@@ -1,8 +1,8 @@
 .chucknorris{
-    display: grid;
+    display: flex;
     height: 100%;
     background-color: whitesmoke;
-    grid-template-columns: 300px auto auto;
+    grid-template-columns: 250px 209px auto;
     grid-auto-flow: column;
     overflow: scroll;
   }

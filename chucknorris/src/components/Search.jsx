@@ -54,7 +54,7 @@ export class Search extends Component {
                 <i className="search icon"></i>
             </button>
 
-        console.log(auto);
+        //console.log(auto);
 
         return (
             <div className="ui search">

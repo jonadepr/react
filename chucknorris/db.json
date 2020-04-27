@@ -30,6 +30,26 @@
       "updated_at": "2020-01-05 13:42:19.104863",
       "url": "https://api.chucknorris.io/jokes/o0sukejatqchi7oyjms6mw",
       "value": "Chuck Norris can set ants on fire with a magnifying glass. At night."
+    },
+    {
+      "categories": [],
+      "created_at": "2020-01-05 13:42:26.991637",
+      "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+      "id": "0cyirBrJSay5yYEL1yYw_A",
+      "updated_at": "2020-01-05 13:42:26.991637",
+      "url": "https://api.chucknorris.io/jokes/0cyirBrJSay5yYEL1yYw_A",
+      "value": "In the original making of Scarface when Tony said \"say hello to my little friend\" Chuck Norris appeared. However, the director cut it out said it was too gruesome for a R rated movie."
+    },
+    {
+      "categories": [
+        "celebrity"
+      ],
+      "created_at": "2020-01-05 13:42:19.576875",
+      "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+      "id": "vvwoodhpr1-bbid5hbs9gw",
+      "updated_at": "2020-01-05 13:42:19.576875",
+      "url": "https://api.chucknorris.io/jokes/vvwoodhpr1-bbid5hbs9gw",
+      "value": "Ozzy Osbourne bites the heads off of bats. Chuck Norris bites the heads off of Siberian Tigers."
     }
   ]
 }

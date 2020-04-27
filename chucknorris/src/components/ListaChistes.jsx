@@ -7,7 +7,7 @@ export class ListaChistes extends Component {
         
         if(this.props.lista.total !== undefined)
         return (
-            <div className="listachistes">
+            <div className="listachistes" key={this.props.lista.value}>
                 Total {this.props.lista.total}
                 {" "}chistes: {
                     this.props.lista.result.map(

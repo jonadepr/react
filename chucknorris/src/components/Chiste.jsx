@@ -23,7 +23,7 @@ export class Chiste extends Component {
             res =>
                 window.prompt("GUARDADO")
         ).catch(console.log)
-        console.log(chisteG)
+        //console.log(chisteG)
     }
 
 
@@ -36,7 +36,7 @@ export class Chiste extends Component {
                         <div class="ui cards">
                             <div class="card">
                                 <div class="content">
-                                    <img class="right floated mini ui image" src={this.props.chiste.icon_url} />
+                                    <img class="right floated mini ui image" src={this.props.chiste.icon_url} alt={this.props.chiste.icon_url} />
                                     <div class="header">
                                         Chiste aleatorio categoría:
                                 </div>
