@@ -34,6 +34,7 @@ export class Chiste extends Component {
             res => {
                 console.log(res);
                 window.location.reload();
+                window.prompt("BORRADO")
             }
         ).catch(console.log)
     }
