@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ListaChistes from './ListaChistes'
 import axios from 'axios'
+import './Recuperar.css'
 
 export class RecuperarChistes extends Component {
 
@@ -28,7 +29,7 @@ export class RecuperarChistes extends Component {
 
     render() {
         return (
-            <div>
+            <div className="recuperar">
                 <ListaChistes lista={this.state.listaChistes}/>
             </div>
         )
