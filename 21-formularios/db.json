@@ -61,5 +61,14 @@
       "id": 10
     }
   ],
-  "clientes": []
+  "clientes": [
+    {
+      "nombre": "STEVEN SL",
+      "id": 1
+    },
+    {
+      "nombre": "Segundo cliente",
+      "id": 2
+    }
+  ]
 }
