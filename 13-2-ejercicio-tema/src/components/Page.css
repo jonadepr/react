@@ -1,0 +1,26 @@
+
+
+.dark {
+    background-color: darkslategrey;
+}
+
+.dark p {
+
+    color: antiquewhite;
+}
+
+.dark h1 {
+    color: antiquewhite;
+}
+
+
+.alto{
+    background-color: blueviolet;
+    color: black
+}
+
+.light{
+    
+    background-color: aquamarine;
+}
+
