@@ -2,6 +2,10 @@
 
     "provincias":[
         {
+            "id": -1,
+            "nombre": "Selecciona"
+        },
+        {
             "id": 1,
             "nombre": "Castellón"
         },
