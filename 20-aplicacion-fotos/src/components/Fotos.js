@@ -33,7 +33,7 @@ export class Fotos extends Component {
     }
 
     changeFiltro() {
-        axios.get("https://api.unsplash.com/search/photos?page=1&query="+this.props.filtro+"&client_id=S8ic8SNvlYvW2ZWpGTZCI09549rjVmsqh5SQMKfJkRM&client_secret=iGOdWbBVHINeso8xkiQ5Iyv7hj6pGZq2-SZvVHCO8ps").then(
+        axios.get("https://api.unsplash.com/search/photos?page=1&query="+this.props.filtro+"&client_id={key}&client_secret={Key}").then(
             res => {
                 this.setState(
                     {  
@@ -48,7 +48,7 @@ export class Fotos extends Component {
 
 
     changeNextPage = (e) => {
-        axios.get("https://api.unsplash.com/search/photos?page="+this.state.pagina + 1+"&query=valencia&client_id=S8ic8SNvlYvW2ZWpGTZCI09549rjVmsqh5SQMKfJkRM&client_secret=iGOdWbBVHINeso8xkiQ5Iyv7hj6pGZq2-SZvVHCO8ps").then(
+        axios.get("https://api.unsplash.com/search/photos?page="+this.state.pagina + 1+"&query=valencia&client_id=key&client_secret=key").then(
             res => {
                 this.setState(
                     {  
