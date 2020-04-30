@@ -15,7 +15,7 @@ export class Fotos extends Component {
     }
 
     componentDidMount() {
-        axios.get("https://api.unsplash.com/search/photos?page=1&query=valencia&client_id=S8ic8SNvlYvW2ZWpGTZCI09549rjVmsqh5SQMKfJkRM&client_secret=iGOdWbBVHINeso8xkiQ5Iyv7hj6pGZq2-SZvVHCO8ps").then(
+        axios.get("https://api.unsplash.com/search/photos?page=1&query=valencia&client_id={Key_id}&client_secret={key_secret}}").then(
             res => {
                 this.setState(
                     {  
