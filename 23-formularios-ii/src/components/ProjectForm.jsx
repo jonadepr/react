@@ -97,7 +97,7 @@ export class ProjectForm extends Component {
                             redirect: true
                         })
                 ).catch(console.log)
-        } else { //undefined nuevo poryecto
+        } else { //undefined nuevo proyecto
             axios.get(`${BASE_API_URL}/clients`)
                 .then(
                     res => {
