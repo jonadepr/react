@@ -12,13 +12,14 @@ export class ProjectForm extends Component {
             code: "",
             description: "",
             client: "",
-            redirect: false
+            redirect: false,
+            clientes: []
         }
         console.log("project form id ", props.id)
     }
 
     componentDidMount() {
-        // me traigo el proyecto si tengo un id, si es undefined no hago 
+        // me traigo el proyecto y los clientes si tengo un id, si es undefined no hago 
         // nada
         if (this.props.id) {
             axios.get(`${BASE_API_URL}/projects/${this.props.id}`).then(
@@ -33,9 +34,23 @@ export class ProjectForm extends Component {
                 }
             )
         }
+        axios.get(`${BASE_API_URL}/clients`).then(
+            res => {
+                this.setState(
+                    {
+                        clientes: res.data
+                    }
+
+                )
+                console.log("clientes", res.data)
+            }
+        )
+
+        console.log("clientes", this.state.clientes)
+
     }
 
-    onClientChange = e => {
+    onClientesChange = e => {
         this.setState(
             {
                 client: e.target.value
@@ -59,12 +74,6 @@ export class ProjectForm extends Component {
         )
     }
 
-    // onTextInputChange = e => {
-    //     this.setState({
-    //         [e.target.name]: e.target.value
-    //     })
-    // }
-
     onSubmitClick = e => {
         e.preventDefault();
         const project = {
@@ -72,23 +81,47 @@ export class ProjectForm extends Component {
             description: this.state.description,
             client: this.state.client
         }
-        if (this.props.id) {
-            axios.put(`${BASE_API_URL}/projects/${this.props.id}`, 
+
+        // ACTUALIZAR client de project
+        /** Cuando estéis grabando el id del cliente, 
+         * para que se muestre el nombre del cliente en la lista de proyectos 
+         * (ahora estaría el id) podéis usar algo parecido a lo que hicimos en 
+         * el ejercicio 15-ejercicio-control
+        */
+
+        if (this.props.id) { //no undefined modificar
+            axios.put(`${BASE_API_URL}/projects/${this.props.id}`,
                 project).then(
-                res =>
-                    this.setState({
-                        redirect: true
-                    })
+                    res =>
+                        this.setState({
+                            redirect: true
+                        })
+                ).catch(console.log)
+        } else { //undefined nuevo poryecto
+
+            Promise.all([
+                axios.post(`${BASE_API_URL}/projects`, project),
+                axios.get(`${BASE_API_URL}/clients`)
+            ]).then(
+                res => {
+                this.setState({
+                    redirect: true
+                })
+                
+                res[1].data.map(
+                    e => {
+                        
+                        if (e.id == project.client) {
+                            project.client = e.description
+                            console.log("e.id", e.id)
+                            console.log("e.description", e.description)
+                        }
+
+                    })}
             ).catch(console.log)
-        } else {
-            axios.post(`${BASE_API_URL}/projects`, project).then(
-                res =>
-                    this.setState({
-                        redirect: true
-                    })
-            ).catch(console.log)
+
+            console.log("proyecto nuevo o editado", project)
         }
-        console.log(project)
     }
 
 
@@ -114,17 +147,22 @@ export class ProjectForm extends Component {
                     </div>
                     <div className="field">
                         <label>Cliente</label>
-                        <input type="text" name="client"
-                            value={this.state.client}
-                            onChange={this.onClientChange}
-                            placeholder="Cliente" />
+
+                        <select onChange={this.onClientesChange} value={this.state.client}>
+                            <option value={-1}>Selecciona un cliente...</option>
+                            {
+                                this.state.clientes.map(
+                                    e => <option key={e.id} value={e.id}> {e.description}</option>
+                                )
+                            }
+                        </select>
                     </div>
 
                     <Link to="/projects/" className="ui red button">
                         <i className="icon close"></i>
                         Cancelar
                 </Link>
-                    <button className="ui primary button" 
+                    <button className="ui primary button"
                         onClick={this.onSubmitClick}
                         type="submit">
                         Enviar

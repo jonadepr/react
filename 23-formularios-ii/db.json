@@ -27,13 +27,13 @@
     {
       "code": "aa",
       "description": "ddd",
-      "client": "ccc",
+      "client": "ccc2",
       "id": 1000
     },
     {
       "code": "aa",
       "description": "ddd",
-      "client": "ccc",
+      "client": "ccc3",
       "id": 349078
     },
     {
@@ -47,6 +47,18 @@
       "description": "hola",
       "client": "cliente",
       "id": 349079
+    },
+    {
+      "code": "dsfdsaf",
+      "description": "adsfasdf",
+      "client": "2",
+      "id": 349080
+    },
+    {
+      "code": "sdsd",
+      "description": "sdsd",
+      "client": "2",
+      "id": 349081
     }
   ],
   "clients": [

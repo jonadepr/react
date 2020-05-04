@@ -5,11 +5,11 @@ export class Navigation extends Component {
     render() {
         return (
             <div className="ui menu">
-                <Link to="/projects" className="item active">
-                    <i class="list icon"></i> Proyectos
+                <Link to="/projects" className="item">
+                    <i className="list icon"></i> Proyectos
                     </Link>
                 <Link to="/clients" className="item">
-                    <i class="user icon"></i> Clientes
+                    <i className="user icon"></i> Clientes
                     </Link>
                 {/* <div class="right menu">
                     <div class="item">
