@@ -98,29 +98,27 @@ export class ProjectForm extends Component {
                         })
                 ).catch(console.log)
         } else { //undefined nuevo poryecto
+            axios.get(`${BASE_API_URL}/clients`)
+                .then(
+                    res => {
+                        res.data.map(
+                            e => {
 
-            Promise.all([
-                axios.post(`${BASE_API_URL}/projects`, project),
-                axios.get(`${BASE_API_URL}/clients`)
-            ]).then(
-                res => {
-                this.setState({
-                    redirect: true
-                })
-                
-                res[1].data.map(
-                    e => {
-                        
-                        if (e.id == project.client) {
-                            project.client = e.description
-                            console.log("e.id", e.id)
-                            console.log("e.description", e.description)
-                        }
+                                if (e.id == project.client) {
+                                    project.client = e.description
+                                    console.log("e.id", e.id)
+                                    console.log("e.description", project.client)
+                                    axios.post(`${BASE_API_URL}/projects`, project).then(
+                                        res =>
+                                            this.setState({
+                                                redirect: true
+                                            })
+                                    )
+                                }
 
-                    })}
-            ).catch(console.log)
-
-            console.log("proyecto nuevo o editado", project)
+                            })
+                    }
+                )
         }
     }
 
