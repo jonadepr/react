@@ -39,7 +39,7 @@
     {
       "code": "PY-R78",
       "description": "Construcción Torre",
-      "client": "Constructora",
+      "client": "Constructora2",
       "id": 9
     },
     {
@@ -51,8 +51,12 @@
   ],
   "clients": [
     {
-      "description": "nuevo 1 - 2",
+      "description": "nuevo",
       "id": 1
+    },
+    {
+      "description": "pedro",
+      "id": 2
     }
   ]
 }

@@ -34,7 +34,7 @@ const ProjectList = () => {
 
                 <Header>
                     <i aria-hidden="true" className="list icon"></i>
-                    Lista de Proyectos ({} proyectos)
+                    Lista de Proyectos ({projects.length} proyectos)
                 </Header>
 
                 <Link to="/projects/new" className="ui basic button">
@@ -42,7 +42,7 @@ const ProjectList = () => {
                         Nuevo Proyecto
                 </Link>
 
-              
+
                 <ProjectsTable deleteElement={deleteElement} 
                     items={projects} />
             </div>
