@@ -60,7 +60,7 @@ export class Pomodoro extends Component {
                 <button onClick={this.stop} className="red ui button">
                     Stop
                 </button>
-                { this.state.tiempo==="0"?
+                { this.state.tiempo<0?
                     <Mensaje></Mensaje> : null
                 }
             </div>
