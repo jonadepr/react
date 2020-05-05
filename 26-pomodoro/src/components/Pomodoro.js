@@ -1,68 +1,138 @@
 import React, { Component } from 'react'
 import Header from './Header'
+import './Pomodoro.css'
 import Mensaje from './Mensaje';
 
 export class Pomodoro extends Component {
-
-
 
     constructor(props) {
         super(props);
         this.state = {
             tiempo: 1500,
-            start: false
+            running: false,
+            mensaje: null
         }
+        this.interval = null;
     }
 
-    start = () => {
-        if (this.state.start === false) {
-            this.interval = setInterval(
-                () => this.setState
-                    ({
-                        tiempo: this.state.tiempo - 1,
-                        start: true
-                    }),
-                1000
-            )
-        }
+    // componentDidMount() {
+    // }
+
+    onStart = () => {
+        this.interval = setInterval(
+            () => {
+                if (this.state.tiempo === 0) {
+                    clearInterval(this.interval);
+                    this.setState(
+                        {
+                            running: false,
+                            mensaje: "El tiempo ha terminado"
+                        }
+                    )
+                } else {
+                    this.setState(
+                        {
+                            tiempo: this.state.tiempo - 1,
+                            running: true
+                        }
+                    )
+                }
+            },
+            10
+        )
+    }
+
+    onStop = () => {
+        clearInterval(this.interval)
+        this.setState(
+            {
+                running: false
+            }
+        )
+
+    }
+
+    onReset = () => {
+        clearInterval(this.interval)
+        this.setState(
+            {
+                tiempo: 1500,
+                running: false,
+                mensaje: null
+            }
+        )
     }
 
 
-    reset = () => {
-        this.setState({
-            tiempo: 1500
-        })
-        setTimeout(() => clearInterval(this.interval), 1500000);
+    onShort = () => {
+        clearInterval(this.interval)
+        this.setState(
+            {
+                tiempo: 300,
+                running: false,
+                mensaje: null
+            }
+        )
     }
 
 
-    stop = () => {
-        setTimeout(() => clearInterval(this.interval), 0);
-        this.setState({
-            start: false
-        })
+    onLarge = () => {
+        clearInterval(this.interval)
+        this.setState(
+            {
+                tiempo: 600,
+                running: false,
+                mensaje: null
+            }
+        )        
     }
+
+    onInterval = () =>{
+        
+    }
+
 
     render() {
         return (
-            <div>
+            <div className="pomodoro" >
                 <Header></Header>
-                Pomodoro {this.state.tiempo}
-                <br></br>Tiempo en minutos y segundos: {" "}
-                {Math.trunc(this.state.tiempo / 60)}{":"}{this.state.tiempo % 60}
-                <br></br>
-                <button onClick={this.start} className="green ui button">
-                    Start
-                </button>
-                <button onClick={this.reset} className="grey ui button">
-                    Reset
-                </button>
-                <button onClick={this.stop} className="red ui button">
-                    Stop
-                </button>
-                { this.state.tiempo<0?
-                    <Mensaje></Mensaje> : null
-                }
+                <div className="ui cards">
+                    <div className="card">
+                        <div className="content">
+                            <div className="header">
+                                {Math.floor(this.state.tiempo / 60)}:
+        {this.state.tiempo % 60 < 10 ? "0" : null}{this.state.tiempo % 60}
+                            </div>
+                            {this.state.mensaje ?
+                                <Mensaje mensaje={this.state.mensaje}></Mensaje>
+                                : null}
+                        </div>
+                        <div className="ui progress">
+                            <div className="bar"
+                                style={{ width: (Math.trunc(this.state.tiempo / 60 / 25 * 100)) + "%" }}>
+                                <div className="progress" ></div>
+                            </div>
+                            <div className="label">{(Math.trunc(this.state.tiempo / 60 / 25 * 100)) + "%"}</div>
+                        </div>
+                        <div className="extra content">
+                            <div className="ui six buttons">
+                                <div className={`ui basic green button ${this.state.running ? "disabled" : ""}`}
+                                    onClick={this.onStart}>
+                                    Start</div>
+                                <div className={`ui basic red button ${this.state.running ? "" : "disabled"}`} onClick={this.onStop}>
+                                    Stop</div>
+                                <div className="ui basic blue button" onClick={this.onReset}>
+                                    Reset</div>
+                                <div className="ui basic grey button" onClick={this.onShort}>
+                                    Short</div>
+                                <div className="ui basic black button" onClick={this.onLarge}>
+                                    Large</div>
+                                    <div className="ui basic red button" onClick={this.onInterval}>
+                                    Periodo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
