@@ -10,7 +10,8 @@ export class Pomodoro extends Component {
         this.state = {
             tiempo: 1500,
             running: false,
-            mensaje: null
+            mensaje: null,
+            division: 25
         }
         this.interval = null;
     }
@@ -58,7 +59,8 @@ export class Pomodoro extends Component {
             {
                 tiempo: 1500,
                 running: false,
-                mensaje: null
+                mensaje: null,
+                division: 25
             }
         )
     }
@@ -70,7 +72,8 @@ export class Pomodoro extends Component {
             {
                 tiempo: 300,
                 running: false,
-                mensaje: null
+                mensaje: null,
+                division: 5
             }
         )
     }
@@ -82,9 +85,10 @@ export class Pomodoro extends Component {
             {
                 tiempo: 600,
                 running: false,
-                mensaje: null
+                mensaje: null,
+                division: 10
             }
-        )        
+        )
     }
 
     render() {
@@ -104,10 +108,10 @@ export class Pomodoro extends Component {
                         </div>
                         <div className="ui progress">
                             <div className="bar"
-                                style={{ width: (Math.trunc(this.state.tiempo / 60 / 25 * 100)) + "%" }}>
+                                style={{ width: (Math.trunc(this.state.tiempo / 60 / this.state.division * 100)) + "%" }}>
                                 <div className="progress" ></div>
                             </div>
-                            <div className="label">{(Math.trunc(this.state.tiempo / 60 / 25 * 100)) + "%"}</div>
+                            <div className="label">{(Math.trunc(this.state.tiempo / 60 / this.state.division * 100)) + "%"}</div>
                         </div>
                         <div className="extra content">
                             <div className="ui five buttons">
