@@ -22,7 +22,7 @@ export class Pomodoro extends Component {
         this.interval = setInterval(
             () => {
                 if (this.state.tiempo === 0) {
-                    clearInterval(this.interval);
+                    clearInterval(this.interval)
                     this.setState(
                         {
                             running: false,
@@ -87,11 +87,6 @@ export class Pomodoro extends Component {
         )        
     }
 
-    onInterval = () =>{
-        
-    }
-
-
     render() {
         return (
             <div className="pomodoro" >
@@ -115,7 +110,7 @@ export class Pomodoro extends Component {
                             <div className="label">{(Math.trunc(this.state.tiempo / 60 / 25 * 100)) + "%"}</div>
                         </div>
                         <div className="extra content">
-                            <div className="ui six buttons">
+                            <div className="ui five buttons">
                                 <div className={`ui basic green button ${this.state.running ? "disabled" : ""}`}
                                     onClick={this.onStart}>
                                     Start</div>
@@ -123,12 +118,10 @@ export class Pomodoro extends Component {
                                     Stop</div>
                                 <div className="ui basic blue button" onClick={this.onReset}>
                                     Reset</div>
-                                <div className="ui basic grey button" onClick={this.onShort}>
+                                <div className="ui basic purple button" onClick={this.onShort}>
                                     Short</div>
                                 <div className="ui basic black button" onClick={this.onLarge}>
                                     Large</div>
-                                    <div className="ui basic red button" onClick={this.onInterval}>
-                                    Periodo</div>
                             </div>
                         </div>
                     </div>
