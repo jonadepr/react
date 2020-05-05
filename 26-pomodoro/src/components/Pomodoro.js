@@ -5,13 +5,16 @@ import Mensaje from './Mensaje';
 
 export class Pomodoro extends Component {
 
+    vector = [1500, 300, 1500, 600, null];
+
     constructor(props) {
         super(props);
         this.state = {
-            tiempo: 1500,
+            tiempo: this.vector[0],
             running: false,
             mensaje: null,
-            division: 25
+            division: 25,
+            fase: 0
         }
         this.interval = null;
     }
@@ -27,14 +30,16 @@ export class Pomodoro extends Component {
                     this.setState(
                         {
                             running: false,
-                            mensaje: "El tiempo ha terminado"
+                            mensaje: "El tiempo ha terminado",
+                            fase: this.state.fase+1,
+                            tiempo: this.vector[this.state.fase+1]
                         }
                     )
                 } else {
                     this.setState(
                         {
                             tiempo: this.state.tiempo - 1,
-                            running: true
+                            running: true,
                         }
                     )
                 }
@@ -118,7 +123,8 @@ export class Pomodoro extends Component {
                                 <div className={`ui basic green button ${this.state.running ? "disabled" : ""}`}
                                     onClick={this.onStart}>
                                     Start</div>
-                                <div className={`ui basic red button ${this.state.running ? "" : "disabled"}`} onClick={this.onStop}>
+                                <div className={`ui basic red button ${this.state.running ? "" : "disabled"}`}
+                                    onClick={this.onStop}>
                                     Stop</div>
                                 <div className="ui basic blue button" onClick={this.onReset}>
                                     Reset</div>
