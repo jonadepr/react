@@ -25,6 +25,18 @@ export class Pomodoro extends Component {
     onStart = () => {
         this.interval = setInterval(
             () => {
+                if(!this.tiempo){
+                    this.setState({
+                        mensaje: null
+                    })
+                }
+                else{
+                    this.setState({
+                        mensaje: "El tiempo ha terminado"
+                    })
+                }
+
+
                 if (this.state.tiempo === 0) {
                     clearInterval(this.interval)
                     this.setState(
@@ -40,6 +52,7 @@ export class Pomodoro extends Component {
                         {
                             tiempo: this.state.tiempo - 1,
                             running: true,
+                            mensaje: null
                         }
                     )
                 }
@@ -62,10 +75,11 @@ export class Pomodoro extends Component {
         clearInterval(this.interval)
         this.setState(
             {
-                tiempo: 1500,
+                tiempo: this.vector[0],
                 running: false,
                 mensaje: null,
-                division: 25
+                division: 25,
+                fase: 0
             }
         )
     }
