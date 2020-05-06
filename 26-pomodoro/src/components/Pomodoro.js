@@ -14,7 +14,8 @@ export class Pomodoro extends Component {
             running: false,
             mensaje: null,
             division: 25,
-            fase: 0
+            fase: 0,
+            fin: false
         }
         this.interval = null;
     }
@@ -25,26 +26,32 @@ export class Pomodoro extends Component {
     onStart = () => {
         this.interval = setInterval(
             () => {
-                if(!this.tiempo){
+                if (this.state.fase===4){
+                    this.onReset()
+                    this.onStart()}
+                    else
+                if (!this.tiempo) {
                     this.setState({
                         mensaje: null
                     })
                 }
-                else{
+                else {
                     this.setState({
-                        mensaje: "El tiempo ha terminado"
+                        mensaje: "El tiempo ha terminado",
+                        fin: true
                     })
                 }
 
 
-                if (this.state.tiempo === 0) {
+                if (this.state.tiempo === 0 && !this.state.fin) {
                     clearInterval(this.interval)
                     this.setState(
                         {
                             running: false,
                             mensaje: "El tiempo ha terminado",
-                            fase: this.state.fase+1,
-                            tiempo: this.vector[this.state.fase+1]
+                            fase: this.state.fase + 1,
+                            tiempo: this.vector[this.state.fase + 1],
+                            fin: false
                         }
                     )
                 } else {
@@ -52,7 +59,8 @@ export class Pomodoro extends Component {
                         {
                             tiempo: this.state.tiempo - 1,
                             running: true,
-                            mensaje: null
+                            mensaje: null,
+                            fin: false
                         }
                     )
                 }
@@ -133,7 +141,7 @@ export class Pomodoro extends Component {
                             <div className="label">{(Math.trunc(this.state.tiempo / 60 / this.state.division * 100)) + "%"}</div>
                         </div>
                         <div className="extra content">
-                            <div className="ui five buttons">
+                            <div className="ui three buttons">
                                 <div className={`ui basic green button ${this.state.running ? "disabled" : ""}`}
                                     onClick={this.onStart}>
                                     Start</div>
@@ -142,10 +150,6 @@ export class Pomodoro extends Component {
                                     Stop</div>
                                 <div className="ui basic blue button" onClick={this.onReset}>
                                     Reset</div>
-                                <div className="ui basic purple button" onClick={this.onShort}>
-                                    Short</div>
-                                <div className="ui basic black button" onClick={this.onLarge}>
-                                    Large</div>
                             </div>
                         </div>
                     </div>
