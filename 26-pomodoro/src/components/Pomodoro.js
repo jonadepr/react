@@ -133,12 +133,12 @@ export class Pomodoro extends Component {
                                 <Mensaje mensaje={this.state.mensaje}></Mensaje>
                                 : null}
                         </div>
-                        <div className="ui progress">
+                        <div className="green ui progress">
                             <div className="bar"
-                                style={{ width: (Math.trunc(this.state.tiempo / 60 / this.state.division * 100)) + "%" }}>
+                                style={{ width: 100-(Math.trunc(this.state.tiempo / 60 / this.state.division * 100)) + "%" }}>
                                 <div className="progress" ></div>
                             </div>
-                            <div className="label">{(Math.trunc(this.state.tiempo / 60 / this.state.division * 100)) + "%"}</div>
+                            <div className="label">{100-(Math.trunc(this.state.tiempo / 60 / this.state.division * 100)) + "%"}</div>
                         </div>
                         <div className="extra content">
                             <div className="ui three buttons">
