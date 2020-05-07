@@ -96,7 +96,7 @@ export class ProjectForm extends Component {
                     res.data.map(
                         e => {
 
-                            if (e.id == project.client) {
+                            if (String(e.id) === project.client) {
                                 project.client = e.description
                                 console.log("e.id", e.id)
                                 console.log("e.description", project.client)
@@ -122,7 +122,7 @@ export class ProjectForm extends Component {
                         res.data.map(
                             e => {
 
-                                if (e.id == project.client) {
+                                if (String(e.id) === project.client) {
                                     project.client = e.description
                                     console.log("e.id", e.id)
                                     console.log("e.description", project.client)
