@@ -89,14 +89,32 @@ export class ProjectForm extends Component {
          * el ejercicio 15-ejercicio-control
         */
 
-        if (this.props.id) { //no undefined modificar
-            axios.put(`${BASE_API_URL}/projects/${this.props.id}`,
-                project).then(
-                    res =>
-                        this.setState({
-                            redirect: true
+        if (this.props.id) { //no es undefined entonces modificar
+            axios.get(`${BASE_API_URL}/clients`)
+            .then(
+                res => {
+                    res.data.map(
+                        e => {
+
+                            if (e.id == project.client) {
+                                project.client = e.description
+                                console.log("e.id", e.id)
+                                console.log("e.description", project.client)
+                                axios.put(`${BASE_API_URL}/projects/${this.props.id}`,
+                                project).then(
+                                    res =>
+                                        this.setState({
+                                            redirect: true
+                                        })
+                                ).catch(console.log)
+                                
+                            }
                         })
-                ).catch(console.log)
+                }
+            )
+
+
+
         } else { //undefined nuevo proyecto
             axios.get(`${BASE_API_URL}/clients`)
                 .then(
@@ -115,7 +133,6 @@ export class ProjectForm extends Component {
                                             })
                                     )
                                 }
-
                             })
                     }
                 )
