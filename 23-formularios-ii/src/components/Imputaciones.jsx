@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BASE_API_URL } from '../config/config'
 import axios from 'axios'
-import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 

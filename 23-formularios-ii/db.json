@@ -181,6 +181,14 @@
       "gastoIngreso": "gasto",
       "projectId": "1",
       "id": 6
+    },
+    {
+      "concepto": "dividendo petroleo",
+      "importe": "789",
+      "fecha": "2020-05-19T22:00:00.000Z",
+      "gastoIngreso": "ingreso",
+      "projectId": "1",
+      "id": 7
     }
   ]
 }
