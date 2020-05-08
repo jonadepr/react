@@ -7,9 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export class Imputaciones extends Component {
 
-
-
-
     constructor(props) {
         super(props);
         this.state = {
@@ -71,32 +68,10 @@ export class Imputaciones extends Component {
 
 
         if (this.props.id) {
-            /*             axios.get(`${BASE_API_URL}/clients`)
-                            .then(
-                                res => {
-                                    res.data.map(
-                                        e => {
-            
-                                            if (String(e.id) === project.client) {
-                                                project.client = e.description
-                                                console.log("e.id", e.id)
-                                                console.log("e.description", project.client)
-                                                axios.put(`${BASE_API_URL}/projects/${this.props.id}`,
-                                                    project).then(
-                                                        res =>
-                                                            this.setState({
-                                                                redirect: true
-                                                            })
-                                                    ).catch(console.log)
-            
-                                            }
-                                        })
-                                }
-                            ) */
-
-
-
+            axios.post(`${BASE_API_URL}/imputaciones`,
+                imputacion).then(res => console.log(res.data))
         }
+        this.props.onClick();
     }
 
     render() {
@@ -132,13 +107,14 @@ export class Imputaciones extends Component {
                         <label>Gasto o ingreso</label>
 
                         <select onChange={this.onGIChange} value={this.state.gastoIngreso}>
-                            <option value={0}>Gasto</option>
-                            <option value={1}>Ingreso</option>
+                            <option selected value={-1}>Selecciona...</option>
+                            <option value={"gasto"}>Gasto</option>
+                            <option value={"ingreso"}>Ingreso</option>
                         </select>
                     </div>
 
 
-                    <Link to="/projects/" className="ui red button">
+                    <Link /* to={"/projects/"} */ onClick={this.props.onClick} className="ui red button">
                         <i className="icon close"></i>
                     Cancelar
             </Link>

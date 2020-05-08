@@ -132,5 +132,55 @@
       "description": "magos suuu",
       "id": 4
     }
+  ],
+  "imputaciones": [
+    {
+      "concepto": "gasto luz",
+      "importe": "99.99",
+      "fecha": "2020-05-05T22:00:00.000Z",
+      "gastoIngreso": "gasto",
+      "projectId": "1",
+      "id": 1
+    },
+    {
+      "concepto": "gasto luz",
+      "importe": "99.99",
+      "fecha": "2020-05-05T22:00:00.000Z",
+      "gastoIngreso": "gasto",
+      "projectId": "1",
+      "id": 2
+    },
+    {
+      "concepto": "gasto luz",
+      "importe": "99.99",
+      "fecha": "2020-05-03T22:00:00.000Z",
+      "gastoIngreso": "gasto",
+      "projectId": "1",
+      "id": 3
+    },
+    {
+      "concepto": "cobro dividendo",
+      "importe": "1000",
+      "fecha": "2020-05-13T22:00:00.000Z",
+      "gastoIngreso": "ingreso",
+      "projectId": "1",
+      "id": 4
+    },
+    {
+      "concepto": "gasto luz",
+      "importe": "99.99",
+      "fecha": "2020-05-11T22:00:00.000Z",
+      "gastoIngreso": "gasto",
+      "projectId": "1",
+      "id": 5
+    },
+    {
+      "concepto": "gasto gas",
+      "importe": "569",
+      "fecha": "2020-06-09T22:00:00.000Z",
+      "gastoIngreso": "gasto",
+      "projectId": "1",
+      "id": 6
+    }
   ]
 }
