@@ -91,27 +91,27 @@ export class ProjectForm extends Component {
 
         if (this.props.id) { //no es undefined entonces modificar
             axios.get(`${BASE_API_URL}/clients`)
-            .then(
-                res => {
-                    res.data.map(
-                        e => {
+                .then(
+                    res => {
+                        res.data.map(
+                            e => {
 
-                            if (String(e.id) === project.client) {
-                                project.client = e.description
-                                console.log("e.id", e.id)
-                                console.log("e.description", project.client)
-                                axios.put(`${BASE_API_URL}/projects/${this.props.id}`,
-                                project).then(
-                                    res =>
-                                        this.setState({
-                                            redirect: true
-                                        })
-                                ).catch(console.log)
-                                
-                            }
-                        })
-                }
-            )
+                                if (String(e.id) === project.client) {
+                                    project.client = e.description
+                                    console.log("e.id", e.id)
+                                    console.log("e.description", project.client)
+                                    axios.put(`${BASE_API_URL}/projects/${this.props.id}`,
+                                        project).then(
+                                            res =>
+                                                this.setState({
+                                                    redirect: true
+                                                })
+                                        ).catch(console.log)
+
+                                }
+                            })
+                    }
+                )
 
 
 

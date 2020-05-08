@@ -4,16 +4,24 @@ import Header from '../components/Header'
 import axios from 'axios'
 import { BASE_API_URL } from '../config/config'
 import { Link } from 'react-router-dom'
+import Imputaciones from '../components/Imputaciones'
 
 export class ProjectView extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            project: {}
+            project: {},
+            showComponent: false,
         }
+        this._onButtonClick = this._onButtonClick.bind(this);
     }
 
+    _onButtonClick() {
+        this.setState({
+            showComponent: true,
+        });
+    }
 
     componentDidMount() {
         console.log(this.props.match)
@@ -34,7 +42,12 @@ export class ProjectView extends Component {
                 </Header>
                 <ProjectCard item={this.state.project}></ProjectCard>
                 <Link to="/projects" className="ui button">Volver</Link>
-
+                
+                    <button onClick={this._onButtonClick} className="ui button">Nueva imputación</button>
+                    {this.state.showComponent ?
+                        <Imputaciones id={this.props.match.params.id} /> :
+                        null
+                    }
             </div>
         )
     }

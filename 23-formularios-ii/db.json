@@ -93,13 +93,13 @@
     {
       "code": "pedro sijshj",
       "description": "pedro",
-      "client": "nuevo",
+      "client": "pedro",
       "id": 349100
     },
     {
       "code": "magos suu",
       "description": "siii",
-      "client": "nuevo 4",
+      "client": "magos suuu",
       "id": 349101
     },
     {
@@ -107,6 +107,12 @@
       "description": "nuevo 4",
       "client": "pedro",
       "id": 349102
+    },
+    {
+      "code": "mm",
+      "description": "mm2",
+      "client": "magos suuu",
+      "id": 349103
     }
   ],
   "clients": [
