@@ -4,13 +4,13 @@ const ProjectCard = props => {
 
     console.log("project card", props)
     return (
-        <div class="ui card">
-            <div class="content">
-                <a class="header" href="./#">{props.item.code}</a>
-                <div class="meta">
-                    <span class="date">{props.item.client}</span>
+        <div className="ui card">
+            <div className="content">
+                <a className="header" href="./#">{props.item.code}</a>
+                <div className="meta">
+                    <span className="date">{props.item.client}</span>
                 </div>
-                <div class="description">
+                <div className="description">
                     {props.item.description}
                 </div>
             </div>

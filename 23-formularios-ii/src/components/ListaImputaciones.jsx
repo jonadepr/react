@@ -11,7 +11,7 @@ export class ListaImputaciones extends Component {
             ingresos: [],
             saldo: 0
         }
-        //console.log("project form id ", this.props.id)
+        console.log("project form id ", this.props.id)
     }
 
     componentDidMount() {
@@ -22,7 +22,7 @@ export class ListaImputaciones extends Component {
         const ingresosu = []
 
         axios.get(
-            `${BASE_API_URL}/imputaciones?projectID=${this.props.id}`).then(
+            `${BASE_API_URL}/imputaciones?projectId=${this.props.id}`).then(
                 res => {
                     res.data.map(
                         e => {
@@ -37,11 +37,11 @@ export class ListaImputaciones extends Component {
                     })
                     console.log("gastos", gastosu)
                     console.log("ingresos", ingresosu)
-                    const gasto = gastosu.reduce( (acc, actual) => acc + parseFloat(actual.importe), 0 )
-                    const ingreso = ingresosu.reduce( (acc, actual) => acc + parseFloat(actual.importe), 0 )
-                    console.log("saldo",ingreso-gasto)
+                    const gasto = gastosu.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
+                    const ingreso = ingresosu.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
+                    console.log("saldo", ingreso - gasto)
                     this.setState({
-                        saldo: ingreso-gasto
+                        saldo: ingreso - gasto
                     })
                 }
             )
@@ -54,34 +54,38 @@ export class ListaImputaciones extends Component {
                 <div>
                     Cuenta del proyecto {this.props.id}
                 </div>
-                <table class="ui celled table unstackable">
+                <table className="ui celled table unstackable">
                     <thead>
                         <tr><th>Ingresos</th>
                         </tr></thead>
                     <tbody>
-                        <tr>
-                            {this.state.ingresos.map
+
+                        {this.state.ingresos.map
                             (e =>
-                            <td data-label="Ingresos">{e.concepto}{": "}{e.importe}</td>
+                                <tr key={e.id}>
+                                    <td data-label="Ingresos">{e.concepto}{": "}{e.importe}</td>
+                                </tr>
                             )}
-                        </tr>
+
                     </tbody>
                 </table>
 
-                <table class="ui celled table unstackable">
+                <table className="ui celled table unstackable">
                     <thead>
                         <tr><th>Gastos</th>
                         </tr></thead>
                     <tbody>
-                        <tr>
-                            {this.state.gastos.map
+
+                        {this.state.gastos.map
                             (e =>
-                            <td data-label="Gastos">{e.concepto}{": "}{e.importe}</td>
+                                <tr key={e.id}>
+                                    <td data-label="Gastos">{e.concepto}{": "}{e.importe}</td>
+                                </tr>
                             )}
-                        </tr>
+
                     </tbody>
                 </table>
-                            <div>SALDO TOTAL: {this.state.saldo}</div>
+                <div>SALDO TOTAL: {this.state.saldo}</div>
             </>
         )
     }
