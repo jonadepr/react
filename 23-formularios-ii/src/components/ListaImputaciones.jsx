@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BASE_API_URL } from '../config/config'
 import axios from 'axios'
-
+import './ListaImputaciones.css'
 export class ListaImputaciones extends Component {
 
     constructor(props) {
@@ -48,43 +48,76 @@ export class ListaImputaciones extends Component {
     }
 
 
+
+    changeToIngresos = (elemento) => {
+        console.log("imputacion", elemento) // en elemento tengo el elemento a cambiar a ingresos
+        elemento.gastoIngreso = "ingreso"
+        axios.put(`${BASE_API_URL}/imputaciones/${elemento.id}`,
+            elemento).then(
+                res => {
+                    console.log("elemento cambiado", elemento)
+                    this.componentDidMount()
+                })
+    }
+
+
+    changeToGastos = (elemento) => {
+        console.log("imputacion", elemento) // en elemento tengo el elemento a cambiar a ingresos
+        elemento.gastoIngreso = "gasto"
+        axios.put(`${BASE_API_URL}/imputaciones/${elemento.id}`,
+            elemento).then(
+                res => {
+                    console.log("elemento cambiado", elemento)
+                    this.componentDidMount()
+                })
+    }
+
+
+
+
     render() {
         return (
             <>
                 <div>
                     Cuenta del proyecto {this.props.id}
                 </div>
-                <table className="ui celled table unstackable">
-                    <thead>
-                        <tr><th>Ingresos</th>
-                        </tr></thead>
-                    <tbody>
+                <div className="containertablas">
+                    <table className="ui celled table unstackable">
+                        <thead>
+                            <tr><th>Ingresos</th>
+                            </tr></thead>
+                        <tbody>
 
-                        {this.state.ingresos.map
-                            (e =>
-                                <tr key={e.id}>
-                                    <td data-label="Ingresos">{e.concepto}{": "}{e.importe}</td>
-                                </tr>
-                            )}
+                            {this.state.ingresos.map
+                                (e =>
+                                    <tr key={e.id}>
+                                        <td data-label="Ingresos">{e.concepto}{": "}{e.importe}
+                                            <i onDoubleClick={() => this.changeToGastos(e)} className="angle right icon"></i></td>
+                                    </tr>
+                                )}
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
-                <table className="ui celled table unstackable">
-                    <thead>
-                        <tr><th>Gastos</th>
-                        </tr></thead>
-                    <tbody>
+                    <table className="ui celled table unstackable">
+                        <thead>
+                            <tr><th>Gastos</th>
+                            </tr></thead>
+                        <tbody>
 
-                        {this.state.gastos.map
-                            (e =>
-                                <tr key={e.id}>
-                                    <td data-label="Gastos">{e.concepto}{": "}{e.importe}</td>
-                                </tr>
-                            )}
+                            {this.state.gastos.map
+                                (e =>
+                                    <tr key={e.id}>
+                                        <td data-label="Gastos">
+                                            <i onDoubleClick={() => this.changeToIngresos(e)}
+                                                className="angle left icon"></i>
+                                            {e.concepto}{": "}{e.importe}</td>
+                                    </tr>
+                                )}
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
                 <div>SALDO TOTAL: {this.state.saldo}</div>
             </>
         )

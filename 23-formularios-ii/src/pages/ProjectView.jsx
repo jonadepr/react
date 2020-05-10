@@ -16,19 +16,19 @@ export class ProjectView extends Component {
             showImputaciones: false,
             showListaImputaciones: true
         }
-        this._onButtonClick = this._onButtonClick.bind(this);
-        this._onButtonClick2 = this._onButtonClick2.bind(this);
     }
 
-    _onButtonClick() {
+    _onButtonClick=()=> {
         this.setState({
             showImputaciones: !this.state.showImputaciones,
+            showListaImputaciones: true
         });
     }
 
-    _onButtonClick2() {
+    _onButtonClick2=()=> {
         this.setState({
             showListaImputaciones: !this.state.showListaImputaciones,
+            showImputaciones: false,
         });
     }
 
