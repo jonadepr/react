@@ -44,7 +44,7 @@ export class ListaImputaciones extends Component {
                     this.setState({
                         saldo: ingreso - gasto
                     })
-                    
+
                 }
             )
     }
@@ -57,9 +57,27 @@ export class ListaImputaciones extends Component {
         axios.put(`${BASE_API_URL}/imputaciones/${elemento.id}`,
             elemento).then(
                 res => {
-                    console.log("elemento cambiado", elemento)
-                    this.componentDidMount()
-                })
+                    const ingresosNuevo = this.state.ingresos
+                    //console.log("elemento cambiado", elemento)
+                    const gastosNuevo = []
+                    this.state.gastos.map(
+                        e => {
+                            e.gastoIngreso === "ingreso" ?
+                                ingresosNuevo.push(e) : gastosNuevo.push(e)
+                            return null
+                        }
+                    )
+                    console.log("ingresosNuevo", ingresosNuevo)
+
+                    const gasto = gastosNuevo.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
+                    const ingreso = ingresosNuevo.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
+                    this.setState({
+                        ingresos: ingresosNuevo,
+                        gastos: gastosNuevo,
+                        saldo: ingreso - gasto
+                    })
+                }
+            )
     }
 
 
@@ -69,11 +87,27 @@ export class ListaImputaciones extends Component {
         axios.put(`${BASE_API_URL}/imputaciones/${elemento.id}`,
             elemento).then(
                 res => {
-                    console.log("elemento cambiado", elemento)
-                    this.componentDidMount()
-                })
-    }
+                    const gastosNuevo = this.state.gastos
+                    //console.log("elemento cambiado", elemento)
+                    const ingresosNuevo = []
+                    this.state.ingresos.map(
+                        e => {
+                            e.gastoIngreso === "gasto" ?
+                                gastosNuevo.push(e) : ingresosNuevo.push(e)
+                            return null
+                        }
+                    )
 
+                    const gasto = gastosNuevo.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
+                    const ingreso = ingresosNuevo.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
+                    this.setState({
+                        ingresos: ingresosNuevo,
+                        gastos: gastosNuevo,
+                        saldo: ingreso - gasto
+                    })
+                }
+            )
+    }
 
 
 
