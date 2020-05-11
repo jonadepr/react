@@ -4,7 +4,7 @@ import {
 } from 'recharts';
 
 
-export default class Example extends PureComponent {
+export default class Chart extends PureComponent {
     // eslint-disable-next-line
     constructor(props) {
         super(props)
