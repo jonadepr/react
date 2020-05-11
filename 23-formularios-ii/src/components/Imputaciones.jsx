@@ -71,7 +71,7 @@ export class Imputaciones extends Component {
             axios.post(`${BASE_API_URL}/imputaciones`,
                 imputacion).then(res => console.log(res.data))
         }
-        /* this.props.onClick(); */
+
     }
 
     render() {

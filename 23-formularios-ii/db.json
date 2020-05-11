@@ -221,6 +221,30 @@
       "gastoIngreso": "ingreso",
       "projectId": "1",
       "id": 11
+    },
+    {
+      "concepto": "gasto luz",
+      "importe": "5",
+      "fecha": "2020-06-04T22:00:00.000Z",
+      "gastoIngreso": "gasto",
+      "projectId": "1",
+      "id": 12
+    },
+    {
+      "concepto": "gasto luz",
+      "importe": "2",
+      "fecha": "2020-04-28T22:00:00.000Z",
+      "gastoIngreso": "gasto",
+      "projectId": "1",
+      "id": 13
+    },
+    {
+      "concepto": "dividendo vodafone",
+      "importe": "500",
+      "fecha": "2020-05-26T22:00:00.000Z",
+      "gastoIngreso": "ingreso",
+      "projectId": "1",
+      "id": 14
     }
   ]
 }

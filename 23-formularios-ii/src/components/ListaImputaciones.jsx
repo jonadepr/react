@@ -92,7 +92,7 @@ export class ListaImputaciones extends Component {
                                 (e =>
                                     <tr key={e.id}>
                                         <td data-label="Ingresos">{e.concepto}{": "}{e.importe}
-                                            <i onDoubleClick={() => this.changeToGastos(e)} className="angle right icon"></i></td>
+                                            <i onClick={() => this.changeToGastos(e)} className="angle right icon"></i></td>
                                     </tr>
                                 )}
 
@@ -109,7 +109,7 @@ export class ListaImputaciones extends Component {
                                 (e =>
                                     <tr key={e.id}>
                                         <td data-label="Gastos">
-                                            <i onDoubleClick={() => this.changeToIngresos(e)}
+                                            <i onClick={() => this.changeToIngresos(e)}
                                                 className="angle left icon"></i>
                                             {e.concepto}{": "}{e.importe}</td>
                                     </tr>

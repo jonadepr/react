@@ -18,14 +18,14 @@ export class ProjectView extends Component {
         }
     }
 
-    _onButtonClick=()=> {
+    _onMostrarImputacion=()=> {
         this.setState({
             showImputaciones: !this.state.showImputaciones,
-            showListaImputaciones: true
+            showListaImputaciones: false
         });
     }
 
-    _onButtonClick2=()=> {
+    _onMostrarLista=()=> {
         this.setState({
             showListaImputaciones: !this.state.showListaImputaciones,
             showImputaciones: false,
@@ -52,7 +52,7 @@ export class ProjectView extends Component {
                 <ProjectCard item={this.state.project}></ProjectCard>
                 <Link to="/projects" className="ui button">Volver</Link>
 
-                <button onClick={this._onButtonClick} className="ui button">
+                <button onClick={this._onMostrarImputacion} className="ui button">
                     Nueva imputación
                         </button>
                 {this.state.showImputaciones ?
@@ -60,7 +60,7 @@ export class ProjectView extends Component {
                     null
                 }
 
-                <button onClick={this._onButtonClick2} className="ui button">
+                <button onClick={this._onMostrarLista} className="ui button">
                     Lista imputaciones
                         </button>
                 {this.state.showListaImputaciones ?
