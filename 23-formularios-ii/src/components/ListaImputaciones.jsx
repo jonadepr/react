@@ -3,7 +3,6 @@ import { BASE_API_URL } from '../config/config'
 import axios from 'axios'
 import './ListaImputaciones.css'
 import Chart from "./Chart"
-import "./Chart.css"
 export class ListaImputaciones extends Component {
 
     constructor(props) {
@@ -157,7 +156,7 @@ export class ListaImputaciones extends Component {
                     </table>
                 </div>
                 {console.log("LE PASO", this.state.ingresos)}
-                <div> SALDO TOTAL: {this.state.saldo}</div>
+                <div> SALDO TOTAL:{" "} {this.state.saldo}</div>
                 <Chart ingresos={this.state.ingresos} gastos={this.state.gastos}></Chart>
 
             </>
