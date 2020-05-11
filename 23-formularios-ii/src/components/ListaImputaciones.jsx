@@ -156,7 +156,9 @@ export class ListaImputaciones extends Component {
                         </tbody>
                     </table>
                 </div>
-                <Chart></Chart>
+                {console.log("LE PASO", this.state.ingresos)}
+                <div> SALDO TOTAL: {this.state.saldo}</div>
+                <Chart ingresos={this.state.ingresos} gastos={this.state.gastos}></Chart>
 
             </>
         )
