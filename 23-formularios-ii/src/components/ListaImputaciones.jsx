@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { BASE_API_URL } from '../config/config'
 import axios from 'axios'
 import './ListaImputaciones.css'
+import Chart from "./Chart"
+import "./Chart.css"
 export class ListaImputaciones extends Component {
 
     constructor(props) {
@@ -154,7 +156,8 @@ export class ListaImputaciones extends Component {
                         </tbody>
                     </table>
                 </div>
-                <div>SALDO TOTAL: {this.state.saldo}</div>
+                <Chart></Chart>
+
             </>
         )
     }

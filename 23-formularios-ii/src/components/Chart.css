@@ -1,13 +1,7 @@
-.containertablas {
-    display: flex;
-    align-items: baseline;
-}
-
-i{
-    cursor: pointer
-}
-
-#container {
+body {
+    margin: 0;
+  }
+  #container {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
