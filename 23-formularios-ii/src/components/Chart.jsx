@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import {
     PieChart, Pie, Cell,
 } from 'recharts';
-
+import "./Chart.css"
 
 export default class Chart extends PureComponent {
     // eslint-disable-next-line
@@ -22,7 +22,7 @@ export default class Chart extends PureComponent {
         ]
 
         return (
-            <PieChart width={400} height={400}>
+            <PieChart width={600} height={600}>
                 <Pie data={data01} dataKey="value" cx={200} cy={200} outerRadius={60} fill="#FF0000" label >
                     {
                         data01.map((entry, index) => <Cell fill={this.COLORS[index % this.COLORS.length]} />)
