@@ -109,6 +109,7 @@ export class ProjectForm extends Component {
                                         ).catch(console.log)
 
                                 }
+                                return null
                             })
                     }
                 )
@@ -133,6 +134,7 @@ export class ProjectForm extends Component {
                                             })
                                     )
                                 }
+                                return null
                             })
                     }
                 )

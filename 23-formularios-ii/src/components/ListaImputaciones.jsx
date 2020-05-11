@@ -29,6 +29,7 @@ export class ListaImputaciones extends Component {
                             if (e.gastoIngreso === "gasto")
                                 gastosu.push(e)
                             else ingresosu.push(e)
+                            return null
                         }
                     )
                     this.setState({
@@ -43,6 +44,7 @@ export class ListaImputaciones extends Component {
                     this.setState({
                         saldo: ingreso - gasto
                     })
+                    
                 }
             )
     }
