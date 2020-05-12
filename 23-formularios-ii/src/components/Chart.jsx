@@ -8,9 +8,8 @@ export default class Chart extends PureComponent {
     // eslint-disable-next-line
     constructor(props) {
         super(props)
+        this.COLORS = ["#FF0000", "#008000"]
     }
-
-    COLORS = ["#FF0000", "#008000"]
 
     render() {
         console.log("props en chart ", this.props)
@@ -23,7 +22,7 @@ export default class Chart extends PureComponent {
 
         return (
             <PieChart width={600} height={600}>
-                <Pie data={data01} dataKey="value" cx={200} cy={200} outerRadius={60} fill="#FF0000" label={(entry) => entry.name} >
+                <Pie data={data01} dataKey="value" cx={200} cy={200} outerRadius={60} label={(entry) => entry.name} >
                     {
                         data01.map((entry, index) => <Cell fill={this.COLORS[index % this.COLORS.length]} />)
                     }
