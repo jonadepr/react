@@ -33,7 +33,7 @@ export class ProjectView extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.match)
+        //console.log(this.props.match)
         axios.get(`${BASE_API_URL}/projects/${this.props.match.params.id}/`)
             .then(res =>
                 this.setState({

@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProjectCard = props => {
 
-    console.log("project card", props)
+    //console.log("project card", props)
     return (
         <div className="ui card">
             <div className="content">

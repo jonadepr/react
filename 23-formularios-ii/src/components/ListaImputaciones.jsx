@@ -12,7 +12,7 @@ export class ListaImputaciones extends Component {
             ingresos: [],
             saldo: 0
         }
-        console.log("project form id ", this.props.id)
+        //console.log("project form id ", this.props.id)
     }
 
     componentDidMount() {
@@ -37,11 +37,11 @@ export class ListaImputaciones extends Component {
                         gastos: gastosu,
                         ingresos: ingresosu
                     })
-                    console.log("gastos", gastosu)
-                    console.log("ingresos", ingresosu)
+                    //console.log("gastos", gastosu)
+                    //console.log("ingresos", ingresosu)
                     const gasto = gastosu.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
                     const ingreso = ingresosu.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
-                    console.log("saldo", ingreso - gasto)
+                    //console.log("saldo", ingreso - gasto)
                     this.setState({
                         saldo: ingreso - gasto
                     })
@@ -53,7 +53,7 @@ export class ListaImputaciones extends Component {
 
 
     changeToIngresos = (elemento) => {
-        console.log("imputacion", elemento) // en elemento tengo el elemento a cambiar a ingresos
+        //console.log("imputacion", elemento) // en elemento tengo el elemento a cambiar a ingresos
         elemento.gastoIngreso = "ingreso"
         axios.put(`${BASE_API_URL}/imputaciones/${elemento.id}`,
             elemento).then(
@@ -68,7 +68,7 @@ export class ListaImputaciones extends Component {
                             return null
                         }
                     )
-                    console.log("ingresosNuevo", ingresosNuevo)
+                    //console.log("ingresosNuevo", ingresosNuevo)
 
                     const gasto = gastosNuevo.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
                     const ingreso = ingresosNuevo.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
@@ -83,7 +83,7 @@ export class ListaImputaciones extends Component {
 
 
     changeToGastos = (elemento) => {
-        console.log("imputacion", elemento) // en elemento tengo el elemento a cambiar a ingresos
+        //console.log("imputacion", elemento) // en elemento tengo el elemento a cambiar a ingresos
         elemento.gastoIngreso = "gasto"
         axios.put(`${BASE_API_URL}/imputaciones/${elemento.id}`,
             elemento).then(
@@ -155,7 +155,6 @@ export class ListaImputaciones extends Component {
                         </tbody>
                     </table>
                 </div>
-                {console.log("LE PASO", this.state.ingresos)}
                 <div> SALDO TOTAL:{" "} {this.state.saldo}</div>
                 <Chart ingresos={this.state.ingresos} gastos={this.state.gastos}></Chart>
 

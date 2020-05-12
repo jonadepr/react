@@ -5,14 +5,13 @@ import {
 import "./Chart.css"
 
 export default class Chart extends PureComponent {
-    // eslint-disable-next-line
     constructor(props) {
         super(props)
         this.COLORS = ["#FF0000", "#008000"]
     }
 
     render() {
-        console.log("props en chart ", this.props)
+        //console.log("props en chart ", this.props)
 
         const gasto = this.props.gastos.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
         const ingreso = this.props.ingresos.reduce((acc, actual) => acc + parseFloat(actual.importe), 0)
