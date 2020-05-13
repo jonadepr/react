@@ -1,7 +1,7 @@
 
-import {global} from '../tasks'
+import { global } from '../tasks'
 
-const tasks = (state = global , action) => {
+const tasks = (state = global, action) => {
     console.log(action);
 
     switch (action.type) {
@@ -9,12 +9,40 @@ const tasks = (state = global , action) => {
             return {
                 ...state,
                 tasks: [...state.tasks, action.payload],
-                notifications: [...state.notifications, 
-                    "Nueva tarea "+action.payload.title
+                notifications: [...state.notifications,
+                "Nueva tarea " + action.payload.title
                 ]
             }
-            
- 
+
+        case "DELETE_TASK":
+            return {
+                ...state,
+                tasks: state.tasks.filter(i => i.id !== action.payload.id),
+                notifications: [...state.notifications,
+                "Eliminada " + action.payload.title
+                ]
+            }
+
+        case "MODIFY_TASK":
+            const nuevoTasks = []
+            state.tasks.forEach(
+                item => {
+                    if (item.id === action.payload.id) {
+                        item.state = "Doing"
+                    }
+                    nuevoTasks.push(item)
+                }
+            )
+
+            console.log("modifico a doing", nuevoTasks)
+
+            return {
+                ...state,
+                tasks: nuevoTasks,
+                notifications: [...state.notifications,
+                "Modificada " + action.payload.title
+                ]
+            }
         default:
             break;
     }

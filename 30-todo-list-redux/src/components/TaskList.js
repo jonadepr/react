@@ -1,18 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Task from './Task'
 import {connect} from 'react-redux'
 import TaskForm from './TaskForm'
 
 const TaskList = props => {
 
-    useEffect(
-        () => { 
-            console.log("did mount");
-            console.log(props);
-        },
-        []
-    )
-    
     return (
         <div className="task-list">
             <TaskForm></TaskForm>
