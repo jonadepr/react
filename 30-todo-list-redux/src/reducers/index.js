@@ -28,9 +28,9 @@ const tasks = (state = global, action) => {
             state.tasks.forEach(
                 item => {
                     if (item.id === action.payload.id) {
-                        if(action.payload.state === "Doing")
-                            item.state="Ready"
-                            else item.state="Doing"
+                        if (action.payload.state === "Doing")
+                            item.state = "Ready"
+                        else item.state = "Doing"
 
                     }
                     nuevoTasks.push(item)
@@ -38,12 +38,17 @@ const tasks = (state = global, action) => {
             )
 
             // console.log("modifico a doing", nuevoTasks)
+            const locontrario = (dr) => {
+                if (dr === "Ready")
+                    return "Doing"
+                else return "Ready"
+            }
 
             return {
                 ...state,
                 tasks: nuevoTasks,
                 notifications: [...state.notifications,
-                "Modificada " + action.payload.title +" desde "+action.payload.state
+                "Modificada " + action.payload.title + " a " + locontrario(action.payload.state)
                 ]
             }
         default:
