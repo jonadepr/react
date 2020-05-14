@@ -1,5 +1,5 @@
 
-import { global } from '../tasks'
+import { global } from '../reduxInitiaState'
 
 const tasks = (state = global, action) => {
     console.log(action);
