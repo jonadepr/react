@@ -28,7 +28,10 @@ const tasks = (state = global, action) => {
             state.tasks.forEach(
                 item => {
                     if (item.id === action.payload.id) {
-                        item.state = "Doing"
+                        if(action.payload.state === "Doing")
+                            item.state="Ready"
+                            else item.state="Doing"
+
                     }
                     nuevoTasks.push(item)
                 }
