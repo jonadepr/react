@@ -9,7 +9,7 @@ const Notifications = (props) => {
             <ul>
                 {
                     props.notifications.map(
-                        i => <li>{i}</li>
+                        i => <li key={i.id}>{i}</li>
                     )
                 }
             </ul>

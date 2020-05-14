@@ -1,41 +1,88 @@
-import { v1 as uuid } from 'uuid'
+import axios from 'axios';
 
-
-export const ADD_TASK = "ADD_TASK";
+export const TASK_ADD_SUCCEED = "ADD_TASK";
+export const TASK_FETCH_SUCCEED = "FETCH_TASKS_SUCCEED"
 export const DELETE_TASK = "DELETE_TASK";
 export const MODIFY_TASK = "MODIFY_TASK";
 
-export const addTask = (title, description) => {
+
+export const addTaskSucceed = (task) => {
     return {
-        type: ADD_TASK,
-        payload: {
-            id: uuid(),
-            title: title,
-            description: description,
+        type: TASK_ADD_SUCCEED,
+        payload: task
+    }
+}
+
+export const addTask = (title, description)  => {
+    return dispatch => {
+        axios.post("http://localhost:4000/tasks", {
+            title,
+            description,
             state: "Ready"
-        }
+        }).then(
+            res => dispatch(addTaskSucceed(res.data))
+        )
     }
 }
 
 
-export const deleteTask = (id, title) => {
+/* 
+export const deleteTaskSucceed = (task) => {
     return {
         type: DELETE_TASK,
-        payload: {
-            id: id,
-            title: title,
-        }
+        payload: task
+    }
+}
+ */
+
+export const deleteTask = (id, title) => {
+    return dispatch => {
+        axios.delete("http://localhost:4000/tasks/"+id).then(
+            
+            
+            res => {
+                console.log("resdata",res)
+                dispatch(fetchTasks())
+            }
+            )
     }
 }
 
 
-export const modifyTask = (id, title, state) => {
+
+export const modifyTask = (id, title, state, description) => {
+    const updater =     {
+        "id": id,
+        "title": title,
+        "description": description,
+        "state": state==="Ready"?"Doing":"Ready"
+      }
+    return dispatch => {
+        axios.put("http://localhost:4000/tasks/"+id, updater).then(
+            res => {
+                console.log("resdata",res)
+                dispatch(fetchTasks())
+            }
+            )
+    }
+}
+
+
+export const fetchTaskSucceed = tasks => {
     return {
-        type: MODIFY_TASK,
+        type: TASK_FETCH_SUCCEED,
         payload: {
-            id: id,
-            title: title,
-            state: state
+            tasks: tasks
         }
+    }
+}
+
+export const fetchTasks = () => {
+    return dispatch => {
+        axios.get("http://localhost:4000/tasks").then(
+            res => {
+                dispatch(fetchTaskSucceed(res.data))
+            }
+        )
     }
 }

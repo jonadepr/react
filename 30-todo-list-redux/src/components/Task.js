@@ -7,8 +7,8 @@ const Task = props => {
         props.dispatch(deleteTask(id, title))
     }
 
-    const onClickToModify = (id, title, state) => {
-        props.dispatch(modifyTask(id, title, state))
+    const onClickToModify = (id, title, state, description) => {
+        props.dispatch(modifyTask(id, title, state, description))
     }
 
     return (
@@ -24,7 +24,8 @@ const Task = props => {
             <p  >
                 {props.task.state}
             </p>
-            <button onClick={() => onClickTodelete(props.task.id, props.task.title)}>Borrar</button> <button onClick={() => onClickToModify(props.task.id, props.task.title, props.task.state)}>Modificar</button>
+            <button onClick={() => onClickTodelete(props.task.id, props.task.title)}>Borrar</button> 
+            <button onClick={() => onClickToModify(props.task.id, props.task.title, props.task.state, props.task.description)}>Modificar</button>
         </div>
     )
 }

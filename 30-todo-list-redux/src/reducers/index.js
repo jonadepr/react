@@ -1,11 +1,12 @@
 
 import { global } from '../reduxInitiaState'
+import { DELETE_TASK, MODIFY_TASK, TASK_ADD_SUCCEED, TASK_FETCH_SUCCEED } from '../actions'
 
 const tasks = (state = global, action) => {
     console.log(action);
 
     switch (action.type) {
-        case "ADD_TASK":
+        case TASK_ADD_SUCCEED:
             return {
                 ...state,
                 tasks: [...state.tasks, action.payload],
@@ -14,7 +15,13 @@ const tasks = (state = global, action) => {
                 ]
             }
 
-        case "DELETE_TASK":
+        case TASK_FETCH_SUCCEED:
+            return {
+                ...state,
+                tasks: action.payload.tasks
+            }
+
+        case DELETE_TASK:
             return {
                 ...state,
                 tasks: state.tasks.filter(i => i.id !== action.payload.id),
@@ -23,7 +30,7 @@ const tasks = (state = global, action) => {
                 ]
             }
 
-        case "MODIFY_TASK":
+        case MODIFY_TASK:
             const nuevoTasks = []
             state.tasks.forEach(
                 item => {
@@ -37,7 +44,6 @@ const tasks = (state = global, action) => {
                 }
             )
 
-            // console.log("modifico a doing", nuevoTasks)
             const locontrario = (dr) => {
                 if (dr === "Ready")
                     return "Doing"
