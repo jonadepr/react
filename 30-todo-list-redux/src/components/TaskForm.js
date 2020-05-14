@@ -22,7 +22,9 @@ const TaskForm = props => {
              <input type="text" value={description} onChange={
                 e => setDescription(e.target.value)
             }></input>
+           
             <button onClick={onSubmit}>Añadir</button>
+            
         </div>
     )
 }
