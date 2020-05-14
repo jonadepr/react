@@ -37,13 +37,13 @@ const tasks = (state = global, action) => {
                 }
             )
 
-            console.log("modifico a doing", nuevoTasks)
+            // console.log("modifico a doing", nuevoTasks)
 
             return {
                 ...state,
                 tasks: nuevoTasks,
                 notifications: [...state.notifications,
-                "Modificada " + action.payload.title
+                "Modificada " + action.payload.title +" desde "+action.payload.state
                 ]
             }
         default:
