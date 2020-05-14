@@ -10,7 +10,7 @@ const tasks = (state = global, action) => {
                 ...state,
                 tasks: [...state.tasks, action.payload],
                 notifications: [...state.notifications,
-                "Nueva tarea " + action.payload.title
+                "Nueva tarea: " + action.payload.title
                 ]
             }
 
@@ -19,7 +19,7 @@ const tasks = (state = global, action) => {
                 ...state,
                 tasks: state.tasks.filter(i => i.id !== action.payload.id),
                 notifications: [...state.notifications,
-                "Eliminada " + action.payload.title
+                "Eliminada: " + action.payload.title
                 ]
             }
 
@@ -48,7 +48,7 @@ const tasks = (state = global, action) => {
                 ...state,
                 tasks: nuevoTasks,
                 notifications: [...state.notifications,
-                "Modificada " + action.payload.title + " a " + locontrario(action.payload.state)
+                "Modificada: " + action.payload.title + " a " + locontrario(action.payload.state)
                 ]
             }
         default:
