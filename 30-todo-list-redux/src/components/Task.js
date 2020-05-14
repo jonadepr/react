@@ -15,15 +15,16 @@ const Task = props => {
         <div className="task"
 
             style={{ border: "1px solid blue" }}>
-            <div onClick={() => onClickTodelete(props.task.id, props.task.title)} className="task-header">
+            <div  className="task-header">
                 {props.task.title}
             </div>
             <p>
                 {props.task.description}
             </p>
-            <p onClick={() => onClickToModify(props.task.id, props.task.title, props.task.state)} >
+            <p  >
                 {props.task.state}
             </p>
+            <button onClick={() => onClickTodelete(props.task.id, props.task.title)}>Borrar</button> <button onClick={() => onClickToModify(props.task.id, props.task.title, props.task.state)}>Modificar</button>
         </div>
     )
 }
