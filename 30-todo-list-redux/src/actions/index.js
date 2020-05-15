@@ -13,7 +13,7 @@ export const addTaskSucceed = (task) => {
     }
 }
 
-export const addTask = (title, description)  => {
+export const addTask = (title, description) => {
     return dispatch => {
         axios.post("http://localhost:4000/tasks", {
             title,
@@ -37,33 +37,31 @@ export const deleteTaskSucceed = (task) => {
 
 export const deleteTask = (id, title) => {
     return dispatch => {
-        axios.delete("http://localhost:4000/tasks/"+id).then(
-            
-            
+        axios.delete("http://localhost:4000/tasks/" + id).then(
             res => {
-                console.log("resdata",res)
+
                 dispatch(fetchTasks())
             }
-            )
+        )
     }
 }
 
 
 
 export const modifyTask = (id, title, state, description) => {
-    const updater =     {
+    const updater = {
         "id": id,
         "title": title,
         "description": description,
-        "state": state==="Ready"?"Doing":"Ready"
-      }
+        "state": state === "Ready" ? "Doing" : "Ready"
+    }
     return dispatch => {
-        axios.put("http://localhost:4000/tasks/"+id, updater).then(
+        axios.put("http://localhost:4000/tasks/" + id, updater).then(
             res => {
-                console.log("resdata",res)
+                console.log("resdata", res)
                 dispatch(fetchTasks())
             }
-            )
+        )
     }
 }
 

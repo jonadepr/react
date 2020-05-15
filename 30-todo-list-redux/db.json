@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Estudiar Redux",
       "description": "Hay que estudiar Redux",
-      "state": "Doing"
+      "state": "Ready"
     },
     {
       "id": 2,
@@ -13,22 +13,22 @@
       "state": "Ready"
     },
     {
+      "id": 3,
       "title": "Recoger al niño",
       "description": "no olvidarse",
-      "state": "Ready",
-      "id": 3
+      "state": "Ready"
     },
     {
+      "id": 4,
       "title": "5",
       "description": "5",
-      "state": "Ready",
-      "id": 4
+      "state": "Ready"
     },
     {
-      "id": 6,
-      "title": "otro",
-      "description": "otro",
-      "state": "Ready"
+      "title": "oauth",
+      "description": "oatuh",
+      "state": "Ready",
+      "id": 5
     }
   ]
 }
