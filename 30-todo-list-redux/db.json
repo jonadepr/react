@@ -10,7 +10,7 @@
       "id": 2,
       "title": "Hacer una PWA",
       "description": "Hacer una pwa bien chula y ejecutarla en un teléfonos",
-      "state": "Ready"
+      "state": "Doing"
     },
     {
       "id": 3,
@@ -22,7 +22,13 @@
       "id": 4,
       "title": "5",
       "description": "5",
-      "state": "Ready"
+      "state": "Doing"
+    },
+    {
+      "title": "otro",
+      "description": "otro",
+      "state": "Ready",
+      "id": 5
     }
   ]
 }
