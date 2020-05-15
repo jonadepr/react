@@ -35,12 +35,22 @@ export const deleteTaskSucceed = (task) => {
 }
  */
 
-export const deleteTask = (id, title) => {
+
+ /* 
+export const modifyTaskSucceed = (task) => {
+    return {
+        type: MODIFY_TASK,
+        payload: task
+    }
+}
+ */
+
+export const deleteTask = (id, title) => { // pasar la task
     return dispatch => {
         axios.delete("http://localhost:4000/tasks/" + id).then(
             res => {
 
-                dispatch(fetchTasks())
+                dispatch(fetchTasks())// llamar a deletetaskSucced
             }
         )
     }
@@ -48,7 +58,7 @@ export const deleteTask = (id, title) => {
 
 
 
-export const modifyTask = (id, title, state, description) => {
+export const modifyTask = (id, title, state, description) => { // pasar la task
     const updater = {
         "id": id,
         "title": title,
@@ -59,7 +69,7 @@ export const modifyTask = (id, title, state, description) => {
         axios.put("http://localhost:4000/tasks/" + id, updater).then(
             res => {
                 console.log("resdata", res)
-                dispatch(fetchTasks())
+                dispatch(fetchTasks()) // llamar a deletetaskSucced
             }
         )
     }
