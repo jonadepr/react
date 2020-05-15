@@ -23,12 +23,6 @@
       "title": "5",
       "description": "5",
       "state": "Ready"
-    },
-    {
-      "title": "oauth",
-      "description": "oatuh",
-      "state": "Ready",
-      "id": 5
     }
   ]
 }

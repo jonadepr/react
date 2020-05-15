@@ -25,32 +25,31 @@ export const addTask = (title, description) => {
     }
 }
 
-
-/* 
+ 
 export const deleteTaskSucceed = (task) => {
     return {
         type: DELETE_TASK,
         payload: task
     }
 }
- */
 
 
- /* 
+
+ 
 export const modifyTaskSucceed = (task) => {
     return {
         type: MODIFY_TASK,
         payload: task
     }
 }
- */
 
-export const deleteTask = (id, title) => { // pasar la task
+
+export const deleteTask = (task) => { // pasar la task
     return dispatch => {
-        axios.delete("http://localhost:4000/tasks/" + id).then(
+        axios.delete("http://localhost:4000/tasks/" + task.id).then(
             res => {
 
-                dispatch(fetchTasks())// llamar a deletetaskSucced
+                dispatch(deleteTaskSucceed(task))// llamar a deletetaskSucced
             }
         )
     }
@@ -58,18 +57,18 @@ export const deleteTask = (id, title) => { // pasar la task
 
 
 
-export const modifyTask = (id, title, state, description) => { // pasar la task
+export const modifyTask = (task) => { // pasar la task
     const updater = {
-        "id": id,
-        "title": title,
-        "description": description,
-        "state": state === "Ready" ? "Doing" : "Ready"
+        "id": task.id,
+        "title": task.title,
+        "description": task.description,
+        "state": task.state === "Ready" ? "Doing" : "Ready"
     }
     return dispatch => {
-        axios.put("http://localhost:4000/tasks/" + id, updater).then(
+        axios.put("http://localhost:4000/tasks/" + task.id, updater).then(
             res => {
                 console.log("resdata", res)
-                dispatch(fetchTasks()) // llamar a deletetaskSucced
+                dispatch(modifyTaskSucceed(task)) // llamar a deletetaskSucced
             }
         )
     }

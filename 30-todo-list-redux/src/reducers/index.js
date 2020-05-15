@@ -44,17 +44,17 @@ const tasks = (state = global, action) => {
                 }
             )
 
-            const locontrario = (dr) => {
+/*             const locontrario = (dr) => {
                 if (dr === "Ready")
                     return "Doing"
                 else return "Ready"
-            }
+            } */
 
             return {
                 ...state,
                 tasks: nuevoTasks,
                 notifications: [...state.notifications,
-                "Modificada: " + action.payload.title + " a " + locontrario(action.payload.state)
+                "Modificada: " + action.payload.title + " a " + action.payload.state
                 ]
             }
         default:

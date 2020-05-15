@@ -3,12 +3,12 @@ import { deleteTask, modifyTask } from '../actions'
 import { connect } from 'react-redux'
 const Task = props => {
 
-    const onClickTodelete = (id, title) => {
-        props.dispatch(deleteTask(id, title))
+    const onClickTodelete = (task) => {
+        props.dispatch(deleteTask(task)) //pasar el item entero
     }
 
-    const onClickToModify = (id, title, state, description) => {
-        props.dispatch(modifyTask(id, title, state, description))
+    const onClickToModify = (task) => { // psar el item entero
+        props.dispatch(modifyTask(task))
     }
 
     return (
@@ -24,8 +24,8 @@ const Task = props => {
             <p  >
                 {props.task.state}
             </p>
-            <button onClick={() => onClickTodelete(props.task.id, props.task.title)}>Borrar</button> 
-            <button onClick={() => onClickToModify(props.task.id, props.task.title, props.task.state, props.task.description)}>Modificar</button>
+            <button onClick={() => onClickTodelete(props.task)}>Borrar</button> 
+            <button onClick={() => onClickToModify(props.task)}>Modificar</button>
         </div>
     )
 }
