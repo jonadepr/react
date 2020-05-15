@@ -44,11 +44,11 @@ const tasks = (state = global, action) => {
                 }
             )
 
-/*             const locontrario = (dr) => {
-                if (dr === "Ready")
-                    return "Doing"
-                else return "Ready"
-            } */
+            /* const locontrario = (dr) => {
+                            if (dr === "Ready")
+                                return "Doing"
+                            else return "Ready"
+                        } */
 
             return {
                 ...state,
