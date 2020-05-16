@@ -25,10 +25,10 @@
       "state": "Doing"
     },
     {
+      "id": 5,
       "title": "otro",
       "description": "otro",
-      "state": "Ready",
-      "id": 5
+      "state": "Doing"
     }
   ]
 }
