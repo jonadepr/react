@@ -5,7 +5,7 @@ import { Auth } from "../context/AuthContext";
 import { withRouter } from "react-router";
 
 const Dashboard=({history}) =>{
-    const { Content, Footer } = Layout;
+    const { Content } = Layout;
     const { usuario } = useContext(Auth);
     const [nombre, setnombre] = useState(null)
 
@@ -37,9 +37,6 @@ const Dashboard=({history}) =>{
                         Hola {nombre} :)
                     </div>
                 </Content>
-                <Footer style={{ textAlign: "center" }}>
-                    Creado por Nicolás Morales
-                </Footer>
             </Layout>
         );
     

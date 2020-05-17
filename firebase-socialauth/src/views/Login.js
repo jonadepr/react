@@ -10,9 +10,7 @@ import Errores from '../components/Errores'
 
 const Login = ({ history }) => {
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-    const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
-    const githubAuthProvider = new firebase.auth.GithubAuthProvider();
-
+    
     const { Content } = Layout;
     const [signup, setsignup] = useState(false);
     const { usuario } = useContext(Auth);
@@ -141,24 +139,6 @@ const Login = ({ history }) => {
                                     onClick={() => socialLogin(googleAuthProvider)}
                                 >
                                     Google
-                                </Button>
-                                <Button
-                                    type="primary"
-                                    htmlType="button"
-                                    className="login-form-button"
-                                    style={{ marginRight: 10 }}
-                                    onClick={() => socialLogin(facebookAuthProvider)}
-                                >
-                                    Facebook
-                                </Button>
-                                <Button
-                                    type="danger"
-                                    htmlType="button"
-                                    className="login-form-button"
-                                    style={{ marginRight: 10 }}
-                                    onClick={() => socialLogin(githubAuthProvider)}
-                                >
-                                    GitHub
                                 </Button>
                             </Form.Item>
                         </Form>
