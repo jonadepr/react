@@ -15,11 +15,11 @@ class Login extends Component {
                     user?<p>
                         Hola, {user.displayName}
                     </p>
-                    :<p>Por favor, sing in</p> 
+                    :<p>Por favor, logueate</p> 
                 }
                 {
-                    user?<button onClick={signOut}>Sign out</button>
-                    :<button onClick={signInWithGoogle}>Sign in with Google</button>
+                    user?<button onClick={signOut}>Salir</button>
+                    :<button onClick={signInWithGoogle}>Log in con Google</button>
                 }
             </div>
         )
